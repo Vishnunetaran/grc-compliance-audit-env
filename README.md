@@ -83,12 +83,12 @@ OpenEnv evaluates mappings strictly by exact ID matches (e.g., `A.5.1`, `AC-2(1)
 
 | Task | Score | Steps | Notes |
 |---|---|---|---|
-| `task_easy` | **~0.83** | 5 | ISO 27001 classification, Macro-F1 |
-| `task_medium` | **~0.83** | 6 | Dual-framework gap analysis |
-| `task_hard` | **~0.75** | 12 | Full tri-framework audit (peak before refinement decay) |
-| **Average** | **~0.80** | — | Progressive inference with early exit |
+| `task_easy` | **0.6333** | 5 | ISO 27001 classification, Macro-F1 |
+| `task_medium` | **0.9095** | 5 | Dual-framework gap analysis |
+| `task_hard` | **0.5595** | 12 | Full tri-framework audit (peak before refinement decay) |
+| **Average** | **0.7008** | — | Progressive inference with early exit |
 
-*Model: google/gemini-2.0-flash-001:free via OpenRouter, Temperature: 0.0*
+*Model: gpt-4o-mini via OpenAI API, Temperature: 0.0*
 
 ---
 
