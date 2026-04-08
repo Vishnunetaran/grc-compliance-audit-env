@@ -16,7 +16,7 @@ import json
 import logging
 from typing import Any
 
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, Body
 from fastapi.responses import JSONResponse
 
 from grc_compliance_audit_env.models import (
@@ -105,7 +105,6 @@ def create_app(
 
     # ── REST endpoints for OpenEnv validator (POST /reset, POST /step, GET /state)
 
-    from fastapi import Body, Request
 
     @application.post("/reset", tags=["OpenEnv"])
     async def rest_reset(request: Request) -> dict:
