@@ -12,13 +12,13 @@ COPY . .
 # Install the package in editable mode so imports resolve correctly
 RUN pip install --no-cache-dir -e .
 
-# Health check — OpenEnv platform polls /health before routing traffic
+# Health check — Hugging Face / platform polls /health
 HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
-    CMD curl -f http://localhost:8000/health || exit 1
+    CMD curl -f http://localhost:7860/health || exit 1
 
-EXPOSE 8000
+EXPOSE 7860
 
 CMD ["uvicorn", "grc_compliance_audit_env.server.app:app", \
-     "--host", "0.0.0.0", "--port", "8000", \
+     "--host", "0.0.0.0", "--port", "7860", \
      "--workers", "1", \
      "--log-level", "info"]
