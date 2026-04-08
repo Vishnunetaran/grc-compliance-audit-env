@@ -422,7 +422,8 @@ async def run_task(task_id: str, ws_base_url: str) -> Tuple[float, bool, int]:
                     
                     step_reward = obs.get("step_reward", 0.0)
                     best_step_reward = max(best_step_reward, step_reward)
-                    
+                    print(f"  Step {step}/{max_steps}  |  Target: {f'Section {target_section}' if target_section else 'Refinement'}  |  Step Reward: {step_reward:+.3f}  (best: {best_step_reward:.3f})")
+
                     if target_section is None:
                         if step_reward < max_reward_seen: decay_steps += 1
                         else: decay_steps = 0
