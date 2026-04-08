@@ -98,24 +98,24 @@ OpenEnv evaluates mappings strictly by exact ID matches (e.g., `A.5.1`, `AC-2(1)
 
 ```bash
 pip install -e ".[dev]"
-uvicorn grc_compliance_audit_env.server.app:app --host 0.0.0.0 --port 8000 --reload
+uvicorn grc_compliance_audit_env.server.app:app --host 0.0.0.0 --port 7860 --reload
 ```
 
 ### Docker
 
 ```bash
 docker build -t grc-compliance-audit-env:latest .
-docker run -p 8000:8000 grc-compliance-audit-env:latest
+docker run -p 7860:7860 grc-compliance-audit-env:latest
 ```
 
 ### Validate
 
 ```bash
 # Check /health
-curl http://localhost:8000/health
+curl http://localhost:7860/health
 
 # Run OpenEnv validator
-openenv validate --url http://localhost:8000
+openenv validate --url http://localhost:7860
 ```
 
 ### Baseline Inference
@@ -124,7 +124,7 @@ openenv validate --url http://localhost:8000
 OPENAI_API_KEY=<your-key> \
 MODEL_NAME=gpt-4o-mini \
 API_BASE_URL=https://api.openai.com/v1 \
-ENV_BASE_URL=http://localhost:8000 \
+ENV_BASE_URL=http://localhost:7860 \
 python inference.py
 ```
 

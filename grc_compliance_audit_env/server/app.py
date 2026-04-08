@@ -207,7 +207,3 @@ def root():
         "status": "running",
         "message": "OpenEnv environment is live."
     }
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}

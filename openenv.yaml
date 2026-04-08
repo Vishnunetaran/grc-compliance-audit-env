@@ -28,7 +28,7 @@ runtime:
   image: grc-compliance-audit-env:latest
 
 app: grc_compliance_audit_env.server.app:app
-port: 8000
+port: 7860
 
 env_vars:
   - name: OPENAI_API_KEY
