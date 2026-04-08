@@ -194,6 +194,12 @@ async def _send_error(ws: WebSocket, message: str) -> None:
         json.dumps({"type": "error", "message": message})
     )
 
+# ─────────────────────────────────────────────────────────────────────────────
+# ASGI app instance (for uvicorn and openenv.yaml `app:` directive)
+# ─────────────────────────────────────────────────────────────────────────────
+
+app = create_app()
+
 @app.get("/")
 def root():
     return {
@@ -205,8 +211,3 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
-# ─────────────────────────────────────────────────────────────────────────────
-# ASGI app instance (for uvicorn and openenv.yaml `app:` directive)
-# ─────────────────────────────────────────────────────────────────────────────
-
-app = create_app()
