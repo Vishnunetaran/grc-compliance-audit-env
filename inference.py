@@ -371,6 +371,7 @@ async def run_task(task_id: str, ws_base_url: str) -> Tuple[float, bool, int]:
         max_steps = MAX_STEPS.get(task_id, 10)
         
         print(f"\n{BOLD}{'▶'} {task_id.upper()}{RESET}  (max {max_steps} steps)")
+        print(f"[START] {task_id}")
 
         cumulative_action = {
             "task_id": task_id,
@@ -383,6 +384,7 @@ async def run_task(task_id: str, ws_base_url: str) -> Tuple[float, bool, int]:
         best_step_reward = 0.0
         decay_steps = 0
         final_obs = {}
+        step = 0
 
         try:
             async with _ws.connect(ws_url, max_size=20_000_000, ping_timeout=20, ping_interval=20) as ws:
@@ -394,10 +396,11 @@ async def run_task(task_id: str, ws_base_url: str) -> Tuple[float, bool, int]:
                 final_obs = obs
                 total_sections = obs.get("total_sections", 1)
 
-                step = 0
                 for step in range(1, max_steps + 1):
                     if obs.get("done", False):
                         break
+                    
+                    print(f"[STEP] {task_id} step={step}")
 
                     target_section = step if step <= total_sections else None
                     user_prompt = build_user_prompt(obs, target_section, prev_feedback, cumulative_action)
@@ -439,10 +442,13 @@ async def run_task(task_id: str, ws_base_url: str) -> Tuple[float, bool, int]:
 
         except Exception as e:
             logger.error(f"WebSocket execution error for task {task_id}: {e}")
-            return best_step_reward, False, 0
+            return best_step_reward, False, step
+        finally:
+            print(f"[END] {task_id} score={best_step_reward:.4f} steps={step}")
             
     except Exception as e:
         logger.error(f"Fatal error preparing task {task_id}: {e}")
+        print(f"[END] {task_id} score=0.0000 steps=0")
         return 0.0, False, 0
 
 async def main_async() -> None:
