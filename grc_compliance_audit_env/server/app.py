@@ -103,6 +103,43 @@ def create_app(
             "spec_version": 1,
         }
 
+    # ── REST endpoints for OpenEnv validator (POST /reset, POST /step, GET /state)
+
+    from fastapi import Body, Request
+
+    @application.post("/reset", tags=["OpenEnv"])
+    async def rest_reset(request: Request) -> dict:
+        """Reset the environment. Validator sends POST /reset with optional JSON body."""
+        try:
+            body = await request.json()
+        except Exception:
+            body = {}
+        options = body if isinstance(body, dict) else {}
+        obs: GRCObservation = _env.reset(options=options)
+        return obs.model_dump()
+
+    @application.post("/step", tags=["OpenEnv"])
+    async def rest_step(request: Request) -> dict:
+        """Take a step. Validator sends POST /step with action JSON body."""
+        try:
+            body = await request.json()
+        except Exception:
+            body = {}
+        raw_action = body.get("action", body) if isinstance(body, dict) else {}
+        try:
+            action = action_class(**raw_action)
+        except Exception:
+            # If the validator sends a minimal/empty action, build a safe default
+            action = action_class(task_id="task_easy")
+        obs: GRCObservation = _env.step(action)
+        return obs.model_dump()
+
+    @application.get("/state", tags=["OpenEnv"])
+    async def rest_state() -> dict:
+        """Return current environment state."""
+        state: GRCState = _env.state()
+        return state.model_dump()
+
     # ── WebSocket endpoint ────────────────────────────────────────────────────
 
     @application.websocket("/ws")
