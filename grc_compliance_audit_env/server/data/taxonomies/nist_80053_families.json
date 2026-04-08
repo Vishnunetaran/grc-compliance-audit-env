@@ -1,0 +1,311 @@
+{
+  "version": "NIST SP 800-53 Rev 5",
+  "description": "All 20 control families from NIST SP 800-53 Revision 5 with key sub-controls and keywords for deterministic grading.",
+  "families": [
+    {
+      "id": "AC",
+      "name": "Access Control",
+      "key_controls": [
+        {"id": "AC-1", "name": "Policy and Procedures", "keywords": ["access control policy", "access procedures"]},
+        {"id": "AC-2", "name": "Account Management", "keywords": ["account management", "user accounts", "provisioning", "deprovisioning"]},
+        {"id": "AC-3", "name": "Access Enforcement", "keywords": ["access enforcement", "authorization", "RBAC", "access decision"]},
+        {"id": "AC-4", "name": "Information Flow Enforcement", "keywords": ["information flow", "data flow", "boundary"]},
+        {"id": "AC-5", "name": "Separation of Duties", "keywords": ["separation of duties", "segregation", "dual control"]},
+        {"id": "AC-6", "name": "Least Privilege", "keywords": ["least privilege", "minimum necessary", "need-to-know"]},
+        {"id": "AC-7", "name": "Unsuccessful Logon Attempts", "keywords": ["unsuccessful logon", "account lockout", "failed login"]},
+        {"id": "AC-8", "name": "System Use Notification", "keywords": ["system use notification", "login banner", "warning banner"]},
+        {"id": "AC-11", "name": "Device Lock", "keywords": ["device lock", "session lock", "screen lock", "inactivity"]},
+        {"id": "AC-17", "name": "Remote Access", "keywords": ["remote access", "VPN", "telework", "remote connection"]},
+        {"id": "AC-18", "name": "Wireless Access", "keywords": ["wireless", "WiFi", "wireless access"]},
+        {"id": "AC-19", "name": "Access Control for Mobile Devices", "keywords": ["mobile device", "BYOD", "MDM"]},
+        {"id": "AC-20", "name": "Use of External Systems", "keywords": ["external systems", "external connections"]}
+      ],
+      "keywords": ["access", "authorisation", "authorization", "account management", "least privilege"]
+    },
+    {
+      "id": "AT",
+      "name": "Awareness and Training",
+      "key_controls": [
+        {"id": "AT-1", "name": "Policy and Procedures", "keywords": ["awareness policy", "training policy"]},
+        {"id": "AT-2", "name": "Literacy Training and Awareness", "keywords": ["security awareness", "training", "phishing", "education"]},
+        {"id": "AT-3", "name": "Role-Based Training", "keywords": ["role-based training", "specialized training", "technical training"]},
+        {"id": "AT-4", "name": "Training Records", "keywords": ["training records", "training documentation"]}
+      ],
+      "keywords": ["awareness", "training", "education", "security training", "phishing"]
+    },
+    {
+      "id": "AU",
+      "name": "Audit and Accountability",
+      "key_controls": [
+        {"id": "AU-1", "name": "Policy and Procedures", "keywords": ["audit policy", "accountability policy"]},
+        {"id": "AU-2", "name": "Event Logging", "keywords": ["event logging", "audit events", "log events"]},
+        {"id": "AU-3", "name": "Content of Audit Records", "keywords": ["audit record content", "log content"]},
+        {"id": "AU-4", "name": "Audit Log Storage Capacity", "keywords": ["log storage", "log capacity", "log retention"]},
+        {"id": "AU-5", "name": "Response to Audit Logging Process Failures", "keywords": ["logging failure", "audit failure"]},
+        {"id": "AU-6", "name": "Audit Record Review, Analysis, and Reporting", "keywords": ["log review", "audit analysis", "SIEM"]},
+        {"id": "AU-8", "name": "Time Stamps", "keywords": ["timestamp", "time synchronization", "NTP"]},
+        {"id": "AU-9", "name": "Protection of Audit Information", "keywords": ["log protection", "audit integrity"]},
+        {"id": "AU-11", "name": "Audit Record Retention", "keywords": ["log retention", "audit retention"]},
+        {"id": "AU-12", "name": "Audit Record Generation", "keywords": ["audit generation", "log generation", "audit trail"]}
+      ],
+      "keywords": ["audit", "logging", "accountability", "audit trail", "SIEM", "log management"]
+    },
+    {
+      "id": "CA",
+      "name": "Assessment, Authorization, and Monitoring",
+      "key_controls": [
+        {"id": "CA-1", "name": "Policy and Procedures", "keywords": ["assessment policy"]},
+        {"id": "CA-2", "name": "Control Assessments", "keywords": ["control assessment", "security assessment"]},
+        {"id": "CA-3", "name": "Information Exchange", "keywords": ["information exchange", "interconnection"]},
+        {"id": "CA-5", "name": "Plan of Action and Milestones", "keywords": ["POAM", "plan of action", "remediation plan"]},
+        {"id": "CA-6", "name": "Authorization", "keywords": ["authorization", "ATO", "authority to operate"]},
+        {"id": "CA-7", "name": "Continuous Monitoring", "keywords": ["continuous monitoring", "ongoing assessment"]}
+      ],
+      "keywords": ["assessment", "authorization", "monitoring", "ATO", "continuous monitoring"]
+    },
+    {
+      "id": "CM",
+      "name": "Configuration Management",
+      "key_controls": [
+        {"id": "CM-1", "name": "Policy and Procedures", "keywords": ["configuration policy"]},
+        {"id": "CM-2", "name": "Baseline Configuration", "keywords": ["baseline configuration", "configuration baseline"]},
+        {"id": "CM-3", "name": "Configuration Change Control", "keywords": ["change control", "configuration change", "change management"]},
+        {"id": "CM-4", "name": "Impact Analyses", "keywords": ["impact analysis", "change impact"]},
+        {"id": "CM-5", "name": "Access Restrictions for Change", "keywords": ["change access", "change restriction"]},
+        {"id": "CM-6", "name": "Configuration Settings", "keywords": ["configuration settings", "hardening", "security configuration"]},
+        {"id": "CM-7", "name": "Least Functionality", "keywords": ["least functionality", "minimize services"]},
+        {"id": "CM-8", "name": "System Component Inventory", "keywords": ["component inventory", "asset inventory"]},
+        {"id": "CM-10", "name": "Software Usage Restrictions", "keywords": ["software restriction", "licensed software"]},
+        {"id": "CM-11", "name": "User-Installed Software", "keywords": ["user installed software", "software installation"]}
+      ],
+      "keywords": ["configuration", "baseline", "change management", "hardening"]
+    },
+    {
+      "id": "CP",
+      "name": "Contingency Planning",
+      "key_controls": [
+        {"id": "CP-1", "name": "Policy and Procedures", "keywords": ["contingency policy", "continuity policy"]},
+        {"id": "CP-2", "name": "Contingency Plan", "keywords": ["contingency plan", "continuity plan", "BCP"]},
+        {"id": "CP-3", "name": "Contingency Training", "keywords": ["contingency training", "DR training"]},
+        {"id": "CP-4", "name": "Contingency Plan Testing", "keywords": ["contingency testing", "DR testing", "BCP testing"]},
+        {"id": "CP-6", "name": "Alternate Storage Site", "keywords": ["alternate storage", "offsite storage"]},
+        {"id": "CP-7", "name": "Alternate Processing Site", "keywords": ["alternate processing", "DR site"]},
+        {"id": "CP-9", "name": "System Backup", "keywords": ["backup", "system backup", "data backup", "backup frequency"]},
+        {"id": "CP-10", "name": "System Recovery and Reconstitution", "keywords": ["recovery", "reconstitution", "restore"]}
+      ],
+      "keywords": ["contingency", "continuity", "disaster recovery", "backup", "BCP", "DR"]
+    },
+    {
+      "id": "IA",
+      "name": "Identification and Authentication",
+      "key_controls": [
+        {"id": "IA-1", "name": "Policy and Procedures", "keywords": ["identification policy", "authentication policy"]},
+        {"id": "IA-2", "name": "Identification and Authentication (Organizational Users)", "keywords": ["MFA", "multi-factor", "two-factor", "2FA", "authentication", "user identification"]},
+        {"id": "IA-3", "name": "Device Identification and Authentication", "keywords": ["device identification", "device authentication"]},
+        {"id": "IA-4", "name": "Identifier Management", "keywords": ["identifier management", "user ID management"]},
+        {"id": "IA-5", "name": "Authenticator Management", "keywords": ["authenticator management", "password management", "credential management", "password complexity"]},
+        {"id": "IA-6", "name": "Authentication Feedback", "keywords": ["authentication feedback", "password display"]},
+        {"id": "IA-8", "name": "Identification and Authentication (Non-Organizational Users)", "keywords": ["external user authentication", "guest authentication"]},
+        {"id": "IA-11", "name": "Re-authentication", "keywords": ["re-authentication", "session timeout"]}
+      ],
+      "keywords": ["identification", "authentication", "MFA", "identity", "credentials", "password"]
+    },
+    {
+      "id": "IR",
+      "name": "Incident Response",
+      "key_controls": [
+        {"id": "IR-1", "name": "Policy and Procedures", "keywords": ["incident response policy", "IR policy"]},
+        {"id": "IR-2", "name": "Incident Response Training", "keywords": ["IR training", "incident training"]},
+        {"id": "IR-3", "name": "Incident Response Testing", "keywords": ["IR testing", "tabletop exercise"]},
+        {"id": "IR-4", "name": "Incident Handling", "keywords": ["incident handling", "containment", "eradication", "recovery"]},
+        {"id": "IR-5", "name": "Incident Monitoring", "keywords": ["incident monitoring", "incident tracking"]},
+        {"id": "IR-6", "name": "Incident Reporting", "keywords": ["incident reporting", "breach notification"]},
+        {"id": "IR-7", "name": "Incident Response Assistance", "keywords": ["incident assistance", "CSIRT"]},
+        {"id": "IR-8", "name": "Incident Response Plan", "keywords": ["incident response plan", "IRP", "incident plan"]}
+      ],
+      "keywords": ["incident response", "incident handling", "breach", "containment", "CSIRT"]
+    },
+    {
+      "id": "MA",
+      "name": "Maintenance",
+      "key_controls": [
+        {"id": "MA-1", "name": "Policy and Procedures", "keywords": ["maintenance policy"]},
+        {"id": "MA-2", "name": "Controlled Maintenance", "keywords": ["controlled maintenance", "maintenance schedule"]},
+        {"id": "MA-3", "name": "Maintenance Tools", "keywords": ["maintenance tools"]},
+        {"id": "MA-4", "name": "Nonlocal Maintenance", "keywords": ["remote maintenance", "nonlocal maintenance"]},
+        {"id": "MA-5", "name": "Maintenance Personnel", "keywords": ["maintenance personnel", "maintenance access"]}
+      ],
+      "keywords": ["maintenance", "equipment maintenance", "system maintenance"]
+    },
+    {
+      "id": "MP",
+      "name": "Media Protection",
+      "key_controls": [
+        {"id": "MP-1", "name": "Policy and Procedures", "keywords": ["media protection policy"]},
+        {"id": "MP-2", "name": "Media Access", "keywords": ["media access", "removable media"]},
+        {"id": "MP-3", "name": "Media Marking", "keywords": ["media marking", "media labeling", "classification"]},
+        {"id": "MP-4", "name": "Media Storage", "keywords": ["media storage", "secure storage"]},
+        {"id": "MP-5", "name": "Media Transport", "keywords": ["media transport", "media transfer"]},
+        {"id": "MP-6", "name": "Media Sanitization", "keywords": ["media sanitization", "data wiping", "degaussing"]},
+        {"id": "MP-7", "name": "Media Use", "keywords": ["media use", "USB policy", "removable media use"]}
+      ],
+      "keywords": ["media", "removable media", "USB", "storage media", "data classification"]
+    },
+    {
+      "id": "PE",
+      "name": "Physical and Environmental Protection",
+      "key_controls": [
+        {"id": "PE-1", "name": "Policy and Procedures", "keywords": ["physical security policy"]},
+        {"id": "PE-2", "name": "Physical Access Authorizations", "keywords": ["physical access authorization", "access badge"]},
+        {"id": "PE-3", "name": "Physical Access Control", "keywords": ["physical access control", "entry point", "security guard"]},
+        {"id": "PE-4", "name": "Access Control for Transmission", "keywords": ["transmission access", "wiring closet"]},
+        {"id": "PE-5", "name": "Access Control for Output Devices", "keywords": ["output device", "printer security"]},
+        {"id": "PE-6", "name": "Monitoring Physical Access", "keywords": ["physical monitoring", "CCTV", "surveillance"]},
+        {"id": "PE-8", "name": "Visitor Access Records", "keywords": ["visitor", "visitor log", "visitor access"]},
+        {"id": "PE-9", "name": "Power Equipment and Cabling", "keywords": ["power", "cabling", "UPS"]},
+        {"id": "PE-10", "name": "Emergency Shutoff", "keywords": ["emergency shutoff", "power cutoff"]},
+        {"id": "PE-11", "name": "Emergency Power", "keywords": ["emergency power", "generator", "UPS"]},
+        {"id": "PE-12", "name": "Emergency Lighting", "keywords": ["emergency lighting"]},
+        {"id": "PE-13", "name": "Fire Protection", "keywords": ["fire protection", "fire suppression", "fire alarm"]},
+        {"id": "PE-14", "name": "Environmental Controls", "keywords": ["environmental", "HVAC", "temperature", "humidity"]},
+        {"id": "PE-15", "name": "Water Damage Protection", "keywords": ["water damage", "flood protection"]},
+        {"id": "PE-16", "name": "Delivery and Removal", "keywords": ["delivery", "removal", "equipment movement"]},
+        {"id": "PE-17", "name": "Alternate Work Site", "keywords": ["alternate work site", "remote office"]},
+        {"id": "PE-18", "name": "Location of System Components", "keywords": ["system location", "component placement"]}
+      ],
+      "keywords": ["physical security", "environmental", "facility", "access control", "perimeter"]
+    },
+    {
+      "id": "PL",
+      "name": "Planning",
+      "key_controls": [
+        {"id": "PL-1", "name": "Policy and Procedures", "keywords": ["planning policy"]},
+        {"id": "PL-2", "name": "System Security and Privacy Plans", "keywords": ["security plan", "SSP", "system security plan"]},
+        {"id": "PL-4", "name": "Rules of Behavior", "keywords": ["rules of behavior", "acceptable use", "AUP"]},
+        {"id": "PL-8", "name": "Security and Privacy Architectures", "keywords": ["security architecture", "privacy architecture"]}
+      ],
+      "keywords": ["planning", "security plan", "architecture", "rules of behavior"]
+    },
+    {
+      "id": "PM",
+      "name": "Program Management",
+      "key_controls": [
+        {"id": "PM-1", "name": "Information Security Program Plan", "keywords": ["security program", "ISMP"]},
+        {"id": "PM-2", "name": "Information Security Program Leadership Role", "keywords": ["CISO", "security leadership"]},
+        {"id": "PM-3", "name": "Information Security and Privacy Resources", "keywords": ["security resources", "security budget"]},
+        {"id": "PM-5", "name": "System Inventory", "keywords": ["system inventory", "system register"]},
+        {"id": "PM-6", "name": "Measures of Performance", "keywords": ["security metrics", "KPI", "performance measures"]},
+        {"id": "PM-9", "name": "Risk Management Strategy", "keywords": ["risk management strategy", "risk appetite"]},
+        {"id": "PM-10", "name": "Authorization Process", "keywords": ["authorization process"]},
+        {"id": "PM-11", "name": "Mission and Business Process Definition", "keywords": ["mission", "business process"]},
+        {"id": "PM-14", "name": "Testing, Training, and Monitoring", "keywords": ["testing", "training", "monitoring program"]}
+      ],
+      "keywords": ["program management", "security program", "governance", "CISO"]
+    },
+    {
+      "id": "PS",
+      "name": "Personnel Security",
+      "key_controls": [
+        {"id": "PS-1", "name": "Policy and Procedures", "keywords": ["personnel security policy"]},
+        {"id": "PS-2", "name": "Position Risk Designation", "keywords": ["position risk", "risk designation"]},
+        {"id": "PS-3", "name": "Personnel Screening", "keywords": ["screening", "background check", "vetting"]},
+        {"id": "PS-4", "name": "Personnel Termination", "keywords": ["termination", "offboarding", "exit process"]},
+        {"id": "PS-5", "name": "Personnel Transfer", "keywords": ["personnel transfer", "role change"]},
+        {"id": "PS-6", "name": "Access Agreements", "keywords": ["access agreement", "NDA", "security agreement"]},
+        {"id": "PS-7", "name": "External Personnel Security", "keywords": ["external personnel", "contractor security"]},
+        {"id": "PS-8", "name": "Personnel Sanctions", "keywords": ["sanctions", "disciplinary", "violation"]}
+      ],
+      "keywords": ["personnel security", "HR security", "screening", "termination", "background check"]
+    },
+    {
+      "id": "PT",
+      "name": "PII Processing and Transparency",
+      "key_controls": [
+        {"id": "PT-1", "name": "Policy and Procedures", "keywords": ["PII policy", "privacy policy"]},
+        {"id": "PT-2", "name": "Authority to Process PII", "keywords": ["authority to process", "legal basis"]},
+        {"id": "PT-3", "name": "PII Processing Purposes", "keywords": ["processing purposes", "purpose limitation"]},
+        {"id": "PT-4", "name": "Consent", "keywords": ["consent", "data consent", "opt-in"]},
+        {"id": "PT-5", "name": "Privacy Notice", "keywords": ["privacy notice", "privacy statement"]},
+        {"id": "PT-6", "name": "System of Records Notice", "keywords": ["system of records", "SORN"]},
+        {"id": "PT-7", "name": "Specific Categories of PII", "keywords": ["sensitive PII", "special categories"]}
+      ],
+      "keywords": ["PII", "privacy", "personal data", "data protection", "consent", "GDPR"]
+    },
+    {
+      "id": "RA",
+      "name": "Risk Assessment",
+      "key_controls": [
+        {"id": "RA-1", "name": "Policy and Procedures", "keywords": ["risk assessment policy"]},
+        {"id": "RA-2", "name": "Security Categorization", "keywords": ["security categorization", "data classification", "FIPS 199"]},
+        {"id": "RA-3", "name": "Risk Assessment", "keywords": ["risk assessment", "risk analysis", "risk evaluation", "threat analysis"]},
+        {"id": "RA-5", "name": "Vulnerability Monitoring and Scanning", "keywords": ["vulnerability scanning", "vulnerability monitoring", "vulnerability assessment", "CVE"]},
+        {"id": "RA-7", "name": "Risk Response", "keywords": ["risk response", "risk treatment", "risk mitigation"]},
+        {"id": "RA-9", "name": "Criticality Analysis", "keywords": ["criticality analysis", "critical assets"]}
+      ],
+      "keywords": ["risk assessment", "vulnerability", "threat", "risk management", "risk analysis"]
+    },
+    {
+      "id": "SA",
+      "name": "System and Services Acquisition",
+      "key_controls": [
+        {"id": "SA-1", "name": "Policy and Procedures", "keywords": ["acquisition policy"]},
+        {"id": "SA-2", "name": "Allocation of Resources", "keywords": ["resource allocation", "security resources"]},
+        {"id": "SA-3", "name": "System Development Life Cycle", "keywords": ["SDLC", "development lifecycle", "secure development"]},
+        {"id": "SA-4", "name": "Acquisition Process", "keywords": ["acquisition", "procurement", "vendor selection"]},
+        {"id": "SA-8", "name": "Security and Privacy Engineering Principles", "keywords": ["security engineering", "privacy by design", "secure design"]},
+        {"id": "SA-9", "name": "External System Services", "keywords": ["external services", "cloud services", "outsourced"]},
+        {"id": "SA-10", "name": "Developer Configuration Management", "keywords": ["developer configuration", "development configuration"]},
+        {"id": "SA-11", "name": "Developer Testing and Evaluation", "keywords": ["developer testing", "security testing", "code review"]}
+      ],
+      "keywords": ["acquisition", "development", "SDLC", "procurement", "secure development"]
+    },
+    {
+      "id": "SC",
+      "name": "System and Communications Protection",
+      "key_controls": [
+        {"id": "SC-1", "name": "Policy and Procedures", "keywords": ["system protection policy", "communications protection policy"]},
+        {"id": "SC-4", "name": "Information in Shared System Resources", "keywords": ["shared resources", "information remnants"]},
+        {"id": "SC-5", "name": "Denial-of-Service Protection", "keywords": ["DoS", "DDoS", "denial of service"]},
+        {"id": "SC-7", "name": "Boundary Protection", "keywords": ["boundary protection", "firewall", "DMZ", "network perimeter"]},
+        {"id": "SC-8", "name": "Transmission Confidentiality and Integrity", "keywords": ["transmission", "encryption in transit", "TLS", "SSL", "confidentiality"]},
+        {"id": "SC-12", "name": "Cryptographic Key Establishment and Management", "keywords": ["key management", "cryptographic key", "PKI"]},
+        {"id": "SC-13", "name": "Cryptographic Protection", "keywords": ["cryptographic protection", "encryption", "AES"]},
+        {"id": "SC-17", "name": "Public Key Infrastructure Certificates", "keywords": ["PKI", "certificates", "CA"]},
+        {"id": "SC-23", "name": "Session Authenticity", "keywords": ["session", "session management", "session authenticity"]},
+        {"id": "SC-28", "name": "Protection of Information at Rest", "keywords": ["encryption at rest", "data at rest", "storage encryption"]}
+      ],
+      "keywords": ["system protection", "communications", "encryption", "firewall", "boundary", "TLS"]
+    },
+    {
+      "id": "SI",
+      "name": "System and Information Integrity",
+      "key_controls": [
+        {"id": "SI-1", "name": "Policy and Procedures", "keywords": ["integrity policy"]},
+        {"id": "SI-2", "name": "Flaw Remediation", "keywords": ["flaw remediation", "patching", "patch management", "updates"]},
+        {"id": "SI-3", "name": "Malicious Code Protection", "keywords": ["malware protection", "antivirus", "anti-malware"]},
+        {"id": "SI-4", "name": "System Monitoring", "keywords": ["system monitoring", "IDS", "IPS", "intrusion detection"]},
+        {"id": "SI-5", "name": "Security Alerts, Advisories, and Directives", "keywords": ["security alerts", "advisories", "threat alerts"]},
+        {"id": "SI-7", "name": "Software, Firmware, and Information Integrity", "keywords": ["integrity verification", "file integrity", "FIM"]},
+        {"id": "SI-10", "name": "Information Input Validation", "keywords": ["input validation", "data validation", "sanitization"]},
+        {"id": "SI-12", "name": "Information Management and Retention", "keywords": ["data retention", "information management"]},
+        {"id": "SI-16", "name": "Memory Protection", "keywords": ["memory protection", "buffer overflow"]}
+      ],
+      "keywords": ["integrity", "malware", "patching", "monitoring", "IDS", "antivirus"]
+    },
+    {
+      "id": "SR",
+      "name": "Supply Chain Risk Management",
+      "key_controls": [
+        {"id": "SR-1", "name": "Policy and Procedures", "keywords": ["supply chain policy"]},
+        {"id": "SR-2", "name": "Supply Chain Risk Management Plan", "keywords": ["supply chain risk plan", "SCRM"]},
+        {"id": "SR-3", "name": "Supply Chain Controls and Processes", "keywords": ["supply chain controls", "supplier assessment", "vendor assessment"]},
+        {"id": "SR-5", "name": "Acquisition Strategies, Tools, and Methods", "keywords": ["acquisition strategies", "procurement methods"]},
+        {"id": "SR-6", "name": "Supplier Assessments and Reviews", "keywords": ["supplier assessment", "vendor review", "third-party audit"]},
+        {"id": "SR-8", "name": "Notification Agreements", "keywords": ["notification agreements", "breach notification"]},
+        {"id": "SR-10", "name": "Inspection of Systems or Components", "keywords": ["system inspection", "component inspection"]},
+        {"id": "SR-11", "name": "Component Authenticity", "keywords": ["component authenticity", "counterfeit prevention"]}
+      ],
+      "keywords": ["supply chain", "vendor", "third-party", "supplier", "procurement"]
+    }
+  ]
+}

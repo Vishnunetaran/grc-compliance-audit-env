@@ -1,0 +1,564 @@
+{
+  "version": "ISO 27001:2022",
+  "description": "All 93 Annex A controls from ISO/IEC 27001:2022, organized into 4 themes: Organisational (A.5), People (A.6), Physical (A.7), and Technological (A.8).",
+  "controls": [
+    {
+      "id": "A.5.1",
+      "name": "Policies for information security",
+      "theme": "organizational",
+      "keywords": ["policy", "information security", "management direction", "governance"]
+    },
+    {
+      "id": "A.5.2",
+      "name": "Information security roles and responsibilities",
+      "theme": "organizational",
+      "keywords": ["roles", "responsibilities", "accountability", "ownership", "CISO"]
+    },
+    {
+      "id": "A.5.3",
+      "name": "Segregation of duties",
+      "theme": "organizational",
+      "keywords": ["segregation", "separation of duties", "conflict of interest", "dual control"]
+    },
+    {
+      "id": "A.5.4",
+      "name": "Management responsibilities",
+      "theme": "organizational",
+      "keywords": ["management", "leadership", "commitment", "oversight"]
+    },
+    {
+      "id": "A.5.5",
+      "name": "Contact with authorities",
+      "theme": "organizational",
+      "keywords": ["authorities", "law enforcement", "regulatory", "government", "contact"]
+    },
+    {
+      "id": "A.5.6",
+      "name": "Contact with special interest groups",
+      "theme": "organizational",
+      "keywords": ["special interest", "professional groups", "forums", "associations"]
+    },
+    {
+      "id": "A.5.7",
+      "name": "Threat intelligence",
+      "theme": "organizational",
+      "keywords": ["threat intelligence", "threat", "indicators of compromise", "IOC", "threat landscape"]
+    },
+    {
+      "id": "A.5.8",
+      "name": "Information security in project management",
+      "theme": "organizational",
+      "keywords": ["project management", "project", "security requirements", "SDLC"]
+    },
+    {
+      "id": "A.5.9",
+      "name": "Inventory of information and other associated assets",
+      "theme": "organizational",
+      "keywords": ["inventory", "asset register", "asset management", "asset list"]
+    },
+    {
+      "id": "A.5.10",
+      "name": "Acceptable use of information and other associated assets",
+      "theme": "organizational",
+      "keywords": ["acceptable use", "AUP", "usage policy", "permitted use"]
+    },
+    {
+      "id": "A.5.11",
+      "name": "Return of assets",
+      "theme": "organizational",
+      "keywords": ["return of assets", "termination", "exit process", "equipment return"]
+    },
+    {
+      "id": "A.5.12",
+      "name": "Classification of information",
+      "theme": "organizational",
+      "keywords": ["classification", "data classification", "labeling", "sensitivity", "confidential", "public", "internal"]
+    },
+    {
+      "id": "A.5.13",
+      "name": "Labelling of information",
+      "theme": "organizational",
+      "keywords": ["labelling", "labeling", "marking", "classification labels"]
+    },
+    {
+      "id": "A.5.14",
+      "name": "Information transfer",
+      "theme": "organizational",
+      "keywords": ["information transfer", "data transfer", "secure transfer", "exchange"]
+    },
+    {
+      "id": "A.5.15",
+      "name": "Access control",
+      "theme": "organizational",
+      "keywords": ["access control", "authorisation", "authorization", "need-to-know", "least privilege", "access rights"]
+    },
+    {
+      "id": "A.5.16",
+      "name": "Identity management",
+      "theme": "organizational",
+      "keywords": ["identity management", "identity", "user registration", "provisioning"]
+    },
+    {
+      "id": "A.5.17",
+      "name": "Authentication information",
+      "theme": "organizational",
+      "keywords": ["authentication", "password", "credentials", "password policy"]
+    },
+    {
+      "id": "A.5.18",
+      "name": "Access rights",
+      "theme": "organizational",
+      "keywords": ["access rights", "access provisioning", "access modification", "access review"]
+    },
+    {
+      "id": "A.5.19",
+      "name": "Information security in supplier relationships",
+      "theme": "organizational",
+      "keywords": ["supplier", "vendor", "third-party", "third party", "supply chain"]
+    },
+    {
+      "id": "A.5.20",
+      "name": "Addressing information security within supplier agreements",
+      "theme": "organizational",
+      "keywords": ["supplier agreements", "vendor contracts", "SLA", "third-party agreements"]
+    },
+    {
+      "id": "A.5.21",
+      "name": "Managing information security in the ICT supply chain",
+      "theme": "organizational",
+      "keywords": ["ICT supply chain", "supply chain security", "vendor risk"]
+    },
+    {
+      "id": "A.5.22",
+      "name": "Monitoring, review and change management of supplier services",
+      "theme": "organizational",
+      "keywords": ["supplier monitoring", "vendor review", "supplier change management"]
+    },
+    {
+      "id": "A.5.23",
+      "name": "Information security for use of cloud services",
+      "theme": "organizational",
+      "keywords": ["cloud", "cloud services", "cloud security", "SaaS", "IaaS", "PaaS"]
+    },
+    {
+      "id": "A.5.24",
+      "name": "Information security incident management planning and preparation",
+      "theme": "organizational",
+      "keywords": ["incident management", "incident response plan", "incident preparation", "IRP"]
+    },
+    {
+      "id": "A.5.25",
+      "name": "Assessment and decision on information security events",
+      "theme": "organizational",
+      "keywords": ["incident assessment", "security event", "triage", "incident classification"]
+    },
+    {
+      "id": "A.5.26",
+      "name": "Response to information security incidents",
+      "theme": "organizational",
+      "keywords": ["incident response", "incident handling", "containment", "eradication"]
+    },
+    {
+      "id": "A.5.27",
+      "name": "Learning from information security incidents",
+      "theme": "organizational",
+      "keywords": ["lessons learned", "post-incident", "root cause analysis", "incident review"]
+    },
+    {
+      "id": "A.5.28",
+      "name": "Collection of evidence",
+      "theme": "organizational",
+      "keywords": ["evidence collection", "forensics", "digital forensics", "evidence preservation"]
+    },
+    {
+      "id": "A.5.29",
+      "name": "Information security during disruption",
+      "theme": "organizational",
+      "keywords": ["business continuity", "disruption", "continuity planning", "BCP"]
+    },
+    {
+      "id": "A.5.30",
+      "name": "ICT readiness for business continuity",
+      "theme": "organizational",
+      "keywords": ["ICT continuity", "disaster recovery", "DR", "backup", "recovery", "RTO", "RPO"]
+    },
+    {
+      "id": "A.5.31",
+      "name": "Legal, statutory, regulatory and contractual requirements",
+      "theme": "organizational",
+      "keywords": ["legal", "regulatory", "statutory", "compliance", "contractual"]
+    },
+    {
+      "id": "A.5.32",
+      "name": "Intellectual property rights",
+      "theme": "organizational",
+      "keywords": ["intellectual property", "IP", "copyright", "license", "software license"]
+    },
+    {
+      "id": "A.5.33",
+      "name": "Protection of records",
+      "theme": "organizational",
+      "keywords": ["records", "record protection", "retention", "record management"]
+    },
+    {
+      "id": "A.5.34",
+      "name": "Privacy and protection of personal identifiable information",
+      "theme": "organizational",
+      "keywords": ["privacy", "PII", "personal data", "GDPR", "data protection"]
+    },
+    {
+      "id": "A.5.35",
+      "name": "Independent review of information security",
+      "theme": "organizational",
+      "keywords": ["independent review", "audit", "internal audit", "external audit"]
+    },
+    {
+      "id": "A.5.36",
+      "name": "Compliance with policies, rules and standards for information security",
+      "theme": "organizational",
+      "keywords": ["compliance", "policy compliance", "standards compliance", "conformity"]
+    },
+    {
+      "id": "A.5.37",
+      "name": "Documented operating procedures",
+      "theme": "organizational",
+      "keywords": ["operating procedures", "SOP", "documented procedures", "work instructions"]
+    },
+    {
+      "id": "A.6.1",
+      "name": "Screening",
+      "theme": "people",
+      "keywords": ["screening", "background check", "verification", "pre-employment"]
+    },
+    {
+      "id": "A.6.2",
+      "name": "Terms and conditions of employment",
+      "theme": "people",
+      "keywords": ["employment", "terms and conditions", "employment contract", "NDA"]
+    },
+    {
+      "id": "A.6.3",
+      "name": "Information security awareness, education and training",
+      "theme": "people",
+      "keywords": ["awareness", "training", "education", "security awareness", "phishing training"]
+    },
+    {
+      "id": "A.6.4",
+      "name": "Disciplinary process",
+      "theme": "people",
+      "keywords": ["disciplinary", "violation", "sanctions", "consequences"]
+    },
+    {
+      "id": "A.6.5",
+      "name": "Responsibilities after termination or change of employment",
+      "theme": "people",
+      "keywords": ["termination", "change of employment", "offboarding", "exit", "post-employment"]
+    },
+    {
+      "id": "A.6.6",
+      "name": "Confidentiality or non-disclosure agreements",
+      "theme": "people",
+      "keywords": ["confidentiality", "NDA", "non-disclosure", "secrecy agreement"]
+    },
+    {
+      "id": "A.6.7",
+      "name": "Remote working",
+      "theme": "people",
+      "keywords": ["remote working", "telework", "work from home", "WFH", "remote access"]
+    },
+    {
+      "id": "A.6.8",
+      "name": "Information security event reporting",
+      "theme": "people",
+      "keywords": ["event reporting", "incident reporting", "security event", "report breach"]
+    },
+    {
+      "id": "A.7.1",
+      "name": "Physical security perimeters",
+      "theme": "physical",
+      "keywords": ["physical security", "perimeter", "secure area", "boundary", "fence"]
+    },
+    {
+      "id": "A.7.2",
+      "name": "Physical entry",
+      "theme": "physical",
+      "keywords": ["physical entry", "entry control", "badge", "access card", "visitor"]
+    },
+    {
+      "id": "A.7.3",
+      "name": "Securing offices, rooms and facilities",
+      "theme": "physical",
+      "keywords": ["offices", "rooms", "facilities", "locked", "secure room"]
+    },
+    {
+      "id": "A.7.4",
+      "name": "Physical security monitoring",
+      "theme": "physical",
+      "keywords": ["CCTV", "surveillance", "physical monitoring", "cameras", "guards"]
+    },
+    {
+      "id": "A.7.5",
+      "name": "Protecting against physical and environmental threats",
+      "theme": "physical",
+      "keywords": ["environmental", "fire", "flood", "natural disaster", "environmental protection"]
+    },
+    {
+      "id": "A.7.6",
+      "name": "Working in secure areas",
+      "theme": "physical",
+      "keywords": ["secure areas", "restricted area", "clean desk", "working rules"]
+    },
+    {
+      "id": "A.7.7",
+      "name": "Clear desk and clear screen",
+      "theme": "physical",
+      "keywords": ["clear desk", "clear screen", "screen lock", "unattended"]
+    },
+    {
+      "id": "A.7.8",
+      "name": "Equipment siting and protection",
+      "theme": "physical",
+      "keywords": ["equipment siting", "equipment protection", "server room", "rack"]
+    },
+    {
+      "id": "A.7.9",
+      "name": "Security of assets off-premises",
+      "theme": "physical",
+      "keywords": ["off-premises", "mobile devices", "laptops", "offsite"]
+    },
+    {
+      "id": "A.7.10",
+      "name": "Storage media",
+      "theme": "physical",
+      "keywords": ["storage media", "removable media", "USB", "hard drive", "media disposal"]
+    },
+    {
+      "id": "A.7.11",
+      "name": "Supporting utilities",
+      "theme": "physical",
+      "keywords": ["utilities", "power supply", "UPS", "air conditioning", "HVAC"]
+    },
+    {
+      "id": "A.7.12",
+      "name": "Cabling security",
+      "theme": "physical",
+      "keywords": ["cabling", "network cables", "cable protection", "wiring"]
+    },
+    {
+      "id": "A.7.13",
+      "name": "Equipment maintenance",
+      "theme": "physical",
+      "keywords": ["maintenance", "equipment maintenance", "servicing", "repair"]
+    },
+    {
+      "id": "A.7.14",
+      "name": "Secure disposal or re-use of equipment",
+      "theme": "physical",
+      "keywords": ["disposal", "re-use", "sanitization", "data wiping", "decommission"]
+    },
+    {
+      "id": "A.8.1",
+      "name": "User endpoint devices",
+      "theme": "technological",
+      "keywords": ["endpoint", "workstation", "laptop", "mobile device", "BYOD"]
+    },
+    {
+      "id": "A.8.2",
+      "name": "Privileged access rights",
+      "theme": "technological",
+      "keywords": ["privileged access", "admin", "administrative", "superuser", "root", "elevated"]
+    },
+    {
+      "id": "A.8.3",
+      "name": "Information access restriction",
+      "theme": "technological",
+      "keywords": ["access restriction", "information access", "need-to-know", "RBAC", "role-based"]
+    },
+    {
+      "id": "A.8.4",
+      "name": "Access to source code",
+      "theme": "technological",
+      "keywords": ["source code", "code access", "repository", "version control"]
+    },
+    {
+      "id": "A.8.5",
+      "name": "Secure authentication",
+      "theme": "technological",
+      "keywords": ["authentication", "MFA", "multi-factor", "two-factor", "2FA", "password", "biometric"]
+    },
+    {
+      "id": "A.8.6",
+      "name": "Capacity management",
+      "theme": "technological",
+      "keywords": ["capacity", "capacity management", "resource planning", "scalability"]
+    },
+    {
+      "id": "A.8.7",
+      "name": "Protection against malware",
+      "theme": "technological",
+      "keywords": ["malware", "antivirus", "anti-malware", "virus", "ransomware"]
+    },
+    {
+      "id": "A.8.8",
+      "name": "Management of technical vulnerabilities",
+      "theme": "technological",
+      "keywords": ["vulnerability", "vulnerability management", "patching", "patch management", "CVE", "scanning"]
+    },
+    {
+      "id": "A.8.9",
+      "name": "Configuration management",
+      "theme": "technological",
+      "keywords": ["configuration", "configuration management", "baseline", "hardening", "CIS"]
+    },
+    {
+      "id": "A.8.10",
+      "name": "Information deletion",
+      "theme": "technological",
+      "keywords": ["information deletion", "data deletion", "data erasure", "retention"]
+    },
+    {
+      "id": "A.8.11",
+      "name": "Data masking",
+      "theme": "technological",
+      "keywords": ["data masking", "masking", "anonymization", "pseudonymization", "obfuscation"]
+    },
+    {
+      "id": "A.8.12",
+      "name": "Data leakage prevention",
+      "theme": "technological",
+      "keywords": ["DLP", "data leakage", "data loss prevention", "exfiltration"]
+    },
+    {
+      "id": "A.8.13",
+      "name": "Information backup",
+      "theme": "technological",
+      "keywords": ["backup", "data backup", "backup policy", "restore", "recovery"]
+    },
+    {
+      "id": "A.8.14",
+      "name": "Redundancy of information processing facilities",
+      "theme": "technological",
+      "keywords": ["redundancy", "high availability", "failover", "clustering"]
+    },
+    {
+      "id": "A.8.15",
+      "name": "Logging",
+      "theme": "technological",
+      "keywords": ["logging", "log", "audit log", "event log", "SIEM", "log management"]
+    },
+    {
+      "id": "A.8.16",
+      "name": "Monitoring activities",
+      "theme": "technological",
+      "keywords": ["monitoring", "network monitoring", "system monitoring", "alerting", "SOC"]
+    },
+    {
+      "id": "A.8.17",
+      "name": "Clock synchronization",
+      "theme": "technological",
+      "keywords": ["clock synchronization", "NTP", "time synchronization", "timestamp"]
+    },
+    {
+      "id": "A.8.18",
+      "name": "Use of privileged utility programs",
+      "theme": "technological",
+      "keywords": ["utility programs", "privileged utilities", "system utilities"]
+    },
+    {
+      "id": "A.8.19",
+      "name": "Installation of software on operational systems",
+      "theme": "technological",
+      "keywords": ["software installation", "approved software", "whitelist", "application control"]
+    },
+    {
+      "id": "A.8.20",
+      "name": "Networks security",
+      "theme": "technological",
+      "keywords": ["network security", "network", "firewall", "segmentation", "VPN"]
+    },
+    {
+      "id": "A.8.21",
+      "name": "Security of network services",
+      "theme": "technological",
+      "keywords": ["network services", "network service security", "SLA", "network provider"]
+    },
+    {
+      "id": "A.8.22",
+      "name": "Segregation of networks",
+      "theme": "technological",
+      "keywords": ["network segregation", "network segmentation", "VLAN", "DMZ", "zone"]
+    },
+    {
+      "id": "A.8.23",
+      "name": "Web filtering",
+      "theme": "technological",
+      "keywords": ["web filtering", "URL filtering", "content filtering", "web proxy"]
+    },
+    {
+      "id": "A.8.24",
+      "name": "Use of cryptography",
+      "theme": "technological",
+      "keywords": ["cryptography", "encryption", "TLS", "SSL", "AES", "key management", "PKI"]
+    },
+    {
+      "id": "A.8.25",
+      "name": "Secure development life cycle",
+      "theme": "technological",
+      "keywords": ["SDLC", "secure development", "development lifecycle", "DevSecOps"]
+    },
+    {
+      "id": "A.8.26",
+      "name": "Application security requirements",
+      "theme": "technological",
+      "keywords": ["application security", "security requirements", "app security"]
+    },
+    {
+      "id": "A.8.27",
+      "name": "Secure system architecture and engineering principles",
+      "theme": "technological",
+      "keywords": ["system architecture", "security architecture", "engineering principles", "secure design"]
+    },
+    {
+      "id": "A.8.28",
+      "name": "Secure coding",
+      "theme": "technological",
+      "keywords": ["secure coding", "code review", "static analysis", "OWASP", "SAST"]
+    },
+    {
+      "id": "A.8.29",
+      "name": "Security testing in development and acceptance",
+      "theme": "technological",
+      "keywords": ["security testing", "penetration testing", "pentest", "DAST", "acceptance testing"]
+    },
+    {
+      "id": "A.8.30",
+      "name": "Outsourced development",
+      "theme": "technological",
+      "keywords": ["outsourced development", "third-party development", "external development"]
+    },
+    {
+      "id": "A.8.31",
+      "name": "Separation of development, test and production environments",
+      "theme": "technological",
+      "keywords": ["environment separation", "dev", "test", "production", "staging"]
+    },
+    {
+      "id": "A.8.32",
+      "name": "Change management",
+      "theme": "technological",
+      "keywords": ["change management", "change control", "change request", "CAB", "RFC"]
+    },
+    {
+      "id": "A.8.33",
+      "name": "Test information",
+      "theme": "technological",
+      "keywords": ["test data", "test information", "test environment", "data masking"]
+    },
+    {
+      "id": "A.8.34",
+      "name": "Protection of information systems during audit testing",
+      "theme": "technological",
+      "keywords": ["audit testing", "audit protection", "audit access", "audit tools"]
+    }
+  ]
+}

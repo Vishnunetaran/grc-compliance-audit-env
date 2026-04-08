@@ -1,0 +1,261 @@
+{
+  "policy_id": "hard_001",
+  "policy_name": "Information Security Management System (ISMS) Policy v3.1",
+  "policy_type": "isms",
+  "target_frameworks": ["iso27001", "nist_80053", "soc2"],
+  "sections": [
+    {
+      "section_id": "section_1",
+      "heading": "Security Governance and Management Direction",
+      "text_summary": "Board oversight, CISO accountability, Security Steering Committee, management commitment, disciplinary procedures, annual policy acknowledgement.",
+      "gt_iso_controls": ["A.5.1", "A.5.2", "A.5.4"],
+      "gt_nist_controls": ["PM-1", "PM-2", "PM-9"],
+      "gt_soc2_criteria": ["CC1.1", "CC1.2", "CC1.3", "CC1.5"],
+      "risk_coverage": "high"
+    },
+    {
+      "section_id": "section_2",
+      "heading": "Asset Management",
+      "text_summary": "CMDB-based asset inventory, four-tier classification, acceptable use policy, cloud asset approval and DLP monitoring.",
+      "gt_iso_controls": ["A.5.9", "A.5.10", "A.5.12", "A.5.23"],
+      "gt_nist_controls": ["CM-8", "PL-4", "RA-2", "SA-9"],
+      "gt_soc2_criteria": ["CC5.3", "CC6.8"],
+      "risk_coverage": "medium"
+    },
+    {
+      "section_id": "section_3",
+      "heading": "Access Control",
+      "text_summary": "Least privilege/need-to-know, RBAC, IAM platform, PAM with JIT elevation, semi-annual reviews, VPN for remote, session recording. MFA ABSENT (GAP 1).",
+      "gt_iso_controls": ["A.5.15", "A.5.16", "A.8.2", "A.8.3"],
+      "gt_nist_controls": ["AC-1", "AC-2", "AC-3", "AC-17"],
+      "gt_soc2_criteria": ["CC6.1", "CC6.2", "CC6.3"],
+      "risk_coverage": "high",
+      "contains_gap": true,
+      "gap_ids": ["gap_1"]
+    },
+    {
+      "section_id": "section_4",
+      "heading": "Cryptography and Data Protection",
+      "text_summary": "TLS 1.2+ in transit, AES-256 at rest, disk encryption (BitLocker/FileVault), backup encryption, KMS with HSM, key rotation defined.",
+      "gt_iso_controls": ["A.8.24"],
+      "gt_nist_controls": ["SC-8", "SC-12", "SC-13", "SC-28"],
+      "gt_soc2_criteria": ["CC6.7"],
+      "risk_coverage": "high"
+    },
+    {
+      "section_id": "section_5",
+      "heading": "Physical and Environmental Security",
+      "text_summary": "Badge access perimeters, PACS logging, 90-day CCTV retention, FM-200 fire suppression, UPS/generator (72h), temperature/humidity monitoring, media sanitisation.",
+      "gt_iso_controls": ["A.7.1", "A.7.2", "A.7.4", "A.7.5", "A.7.10", "A.7.11"],
+      "gt_nist_controls": ["PE-2", "PE-3", "PE-6", "PE-9", "PE-13", "PE-14", "MP-6"],
+      "gt_soc2_criteria": ["CC6.4"],
+      "risk_coverage": "medium"
+    },
+    {
+      "section_id": "section_6",
+      "heading": "Operations Security",
+      "text_summary": "Anti-malware (4h update SLA), SIEM with 12-month retention, continuous SOC monitoring, Change Advisory Board for normal changes, emergency change retrospective approval. Vulnerability management ABSENT (GAP 2).",
+      "gt_iso_controls": ["A.8.7", "A.8.15", "A.8.16", "A.8.32"],
+      "gt_nist_controls": ["SI-3", "AU-2", "AU-12", "CM-3"],
+      "gt_soc2_criteria": ["CC7.2", "CC8.1"],
+      "risk_coverage": "high",
+      "contains_gap": true,
+      "gap_ids": ["gap_2"]
+    },
+    {
+      "section_id": "section_7",
+      "heading": "Incident Management",
+      "text_summary": "IRP maintained and tested annually, SOC as first contact, regulatory notification process, containment-eradication-recovery workflow, incident log. Incident classification criteria ABSENT (GAP 3).",
+      "gt_iso_controls": ["A.5.26", "A.5.27", "A.5.28"],
+      "gt_nist_controls": ["IR-1", "IR-4", "IR-6", "IR-8"],
+      "gt_soc2_criteria": ["CC7.4"],
+      "risk_coverage": "high",
+      "contains_gap": true,
+      "gap_ids": ["gap_3"]
+    },
+    {
+      "section_id": "section_8",
+      "heading": "Business Continuity and Resilience",
+      "text_summary": "BCP and DRP maintained, annual BIA, RTO/RPO defined per system, secondary DC for DR, semi-annual failover tests, encrypted backup. Backup FREQUENCY undefined (GAP 4).",
+      "gt_iso_controls": ["A.5.29", "A.8.14"],
+      "gt_nist_controls": ["CP-2", "CP-7"],
+      "gt_soc2_criteria": ["CC9.1"],
+      "risk_coverage": "high",
+      "contains_gap": true,
+      "gap_ids": ["gap_4"]
+    },
+    {
+      "section_id": "section_9",
+      "heading": "Supplier and Vendor Management",
+      "text_summary": "Supplier security risk assessment (pre-engagement), security contractual clauses, Tier-1 annual reassessment, Approved Supplier Register. Assessment METHODOLOGY undefined (GAP 5).",
+      "gt_iso_controls": ["A.5.19", "A.5.20", "A.5.21", "A.5.22"],
+      "gt_nist_controls": ["SR-3", "SR-6"],
+      "gt_soc2_criteria": ["CC9.2"],
+      "risk_coverage": "medium",
+      "contains_gap": true,
+      "gap_ids": ["gap_5"]
+    },
+    {
+      "section_id": "section_10",
+      "heading": "Compliance, Audit, and Legal",
+      "text_summary": "Regulatory register (PDPA, MAS TRM, SOC 2), annual internal ISMS audit, software licence compliance, DPO appointed, privacy impact assessments, retention schedule.",
+      "gt_iso_controls": ["A.5.31", "A.5.32", "A.5.33", "A.5.34", "A.5.35"],
+      "gt_nist_controls": ["CA-2", "CA-7", "PT-1", "PM-6"],
+      "gt_soc2_criteria": ["CC4.1", "CC4.2"],
+      "risk_coverage": "medium"
+    }
+  ],
+  "seeded_gaps": [
+    {
+      "gap_id": "gap_1",
+      "control_id": "A.8.5",
+      "framework": "iso27001",
+      "equivalent_nist": "IA-2",
+      "equivalent_soc2": "CC6.6",
+      "risk_level": "critical",
+      "gap_description": "No multi-factor authentication (MFA) requirement specified for any access category — remote access, privileged access, or critical system access.",
+      "missing_from_section": "section_3",
+      "remediation_keywords": ["MFA", "multi-factor", "two-factor", "2FA", "OTP", "TOTP", "authentication", "authenticator"],
+      "remediation": "Section 3.4 (Remote Access) and 3.3 (Privileged Access) must be amended to require MFA for: (a) all remote VPN sessions, (b) all privileged account logins via PAM, (c) all access to Confidential/Restricted systems. Approved methods: TOTP app, hardware token, or push notification.",
+      "severity_weight": 0.25
+    },
+    {
+      "gap_id": "gap_2",
+      "control_id": "A.8.8",
+      "framework": "iso27001",
+      "equivalent_nist": "RA-5",
+      "equivalent_soc2": "CC7.1",
+      "risk_level": "high",
+      "gap_description": "No vulnerability scanning, patch management programme, or penetration testing schedule defined anywhere in the policy.",
+      "missing_from_section": "section_6",
+      "remediation_keywords": ["vulnerability", "scanning", "patch", "CVE", "remediation", "penetration testing", "vulnerability management"],
+      "remediation": "Add a new sub-section 6.4 (Vulnerability Management): (a) quarterly authenticated vulnerability scans of all internet-facing and critical internal systems, (b) patch SLAs — Critical CVEs: 24 hours, High: 7 days, Medium: 30 days, Low: 90 days, (c) annual penetration test by accredited third party, (d) results tracked in the risk register.",
+      "severity_weight": 0.15
+    },
+    {
+      "gap_id": "gap_3",
+      "control_id": "A.5.24",
+      "framework": "iso27001",
+      "equivalent_nist": "IR-4",
+      "equivalent_soc2": "CC7.3",
+      "risk_level": "high",
+      "gap_description": "Incident classification criteria are absent. There is no defined threshold or decision framework for what constitutes a 'security incident' vs. a routine 'security event.'",
+      "missing_from_section": "section_7",
+      "remediation_keywords": ["incident classification", "classification criteria", "threshold", "security event", "triage", "categorisation"],
+      "remediation": "Add Section 7.1a (Incident Classification Criteria): Define quantitative and qualitative thresholds for declaring a security incident — including data volume thresholds, system types affected, and exposure duration. Map criteria to severity levels (P1–P4) with clear escalation matrix.",
+      "severity_weight": 0.15
+    },
+    {
+      "gap_id": "gap_4",
+      "control_id": "A.5.30",
+      "framework": "iso27001",
+      "equivalent_nist": "CP-9",
+      "equivalent_soc2": "A-1",
+      "risk_level": "high",
+      "gap_description": "Backup frequency is not specified for any system tier. The BCP references backup but lacks schedules, making RPO commitments unverifiable.",
+      "missing_from_section": "section_8",
+      "remediation_keywords": ["backup frequency", "backup schedule", "daily backup", "weekly backup", "incremental", "RPO", "restore"],
+      "remediation": "Amend Section 8.3 with explicit backup schedules by system tier: Tier 1 (Critical): hourly incremental, daily full; Tier 2 (Important): daily incremental, weekly full; Tier 3 (Standard): weekly full. Define RPO per tier and confirm restore tests validate these objectives.",
+      "severity_weight": 0.15
+    },
+    {
+      "gap_id": "gap_5",
+      "control_id": "A.5.19",
+      "framework": "iso27001",
+      "equivalent_nist": "SR-3",
+      "equivalent_soc2": "CC9.2",
+      "risk_level": "medium",
+      "gap_description": "Third-party security assessment process is referenced but not described. No methodology, questionnaire standard (e.g., SIG, CAIQ, ISO 27001 cert check), or scoring criteria defined.",
+      "missing_from_section": "section_9",
+      "remediation_keywords": ["assessment methodology", "questionnaire", "vendor assessment", "third-party assessment", "SIG", "CAIQ", "scoring"],
+      "remediation": "Add Section 9.1a (Supplier Assessment Methodology): Tier-1 suppliers complete the Standardised Information Gathering (SIG) questionnaire annually. Tier-2 suppliers complete a simplified 20-control checklist. Scoring criteria: <70% = assessment fail, engagement blocked pending remediation. Results stored in Approved Supplier Register.",
+      "severity_weight": 0.08
+    }
+  ],
+  "ground_truth_shared_controls": [
+    {
+      "policy_section_id": "section_3",
+      "iso_control_id": "A.5.15",
+      "nist_control_id": "AC-1",
+      "soc2_criteria_id": "CC6.1",
+      "topic": "Access Control Policy"
+    },
+    {
+      "policy_section_id": "section_4",
+      "iso_control_id": "A.8.24",
+      "nist_control_id": "SC-8",
+      "soc2_criteria_id": "CC6.7",
+      "topic": "Encryption / Cryptography"
+    },
+    {
+      "policy_section_id": "section_5",
+      "iso_control_id": "A.7.1",
+      "nist_control_id": "PE-2",
+      "soc2_criteria_id": "CC6.4",
+      "topic": "Physical Security"
+    },
+    {
+      "policy_section_id": "section_6",
+      "iso_control_id": "A.8.15",
+      "nist_control_id": "AU-2",
+      "soc2_criteria_id": "CC7.2",
+      "topic": "Logging & Monitoring"
+    },
+    {
+      "policy_section_id": "section_6",
+      "iso_control_id": "A.8.32",
+      "nist_control_id": "CM-3",
+      "soc2_criteria_id": "CC8.1",
+      "topic": "Change Management"
+    },
+    {
+      "policy_section_id": "section_7",
+      "iso_control_id": "A.5.26",
+      "nist_control_id": "IR-4",
+      "soc2_criteria_id": "CC7.4",
+      "topic": "Incident Response"
+    },
+    {
+      "policy_section_id": "section_8",
+      "iso_control_id": "A.5.29",
+      "nist_control_id": "CP-2",
+      "soc2_criteria_id": "CC9.1",
+      "topic": "Business Continuity"
+    },
+    {
+      "policy_section_id": "section_9",
+      "iso_control_id": "A.5.19",
+      "nist_control_id": "SR-3",
+      "soc2_criteria_id": "CC9.2",
+      "topic": "Vendor Management"
+    }
+  ],
+  "max_steps": 20,
+  "grader_config": {
+    "type": "full_audit",
+    "weights": {
+      "mapping_score": 0.35,
+      "gap_score": 0.40,
+      "cross_framework_quality": 0.25
+    },
+    "gap_score_sub_weights": {
+      "gap_coverage": 0.70,
+      "severity_accuracy": 0.30
+    },
+    "gap_severity_rewards": {
+      "critical": 0.25,
+      "high": 0.15,
+      "medium": 0.08
+    },
+    "gap_miss_penalties": {
+      "critical": -0.20,
+      "high": -0.10,
+      "medium": -0.05
+    },
+    "false_alarm_penalty": -0.05,
+    "efficiency_bonus": 0.10,
+    "efficiency_threshold": 0.80,
+    "cross_framework_bonus_per_shared_control": 0.05,
+    "partial_reward": true
+  }
+}

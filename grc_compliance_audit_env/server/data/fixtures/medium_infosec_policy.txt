@@ -1,0 +1,157 @@
+INFORMATION SECURITY POLICY v2.0 (PARTIAL — AUDIT REVIEW DRAFT)
+Organisation: Nexus Financial Services Pvt Ltd
+Classification: Confidential
+Effective Date: 01 March 2025
+Review Cycle: Annual
+Note: This is a partial policy covering three domains. Additional sections pending drafting.
+
+================================================================================
+
+1. DATA CLASSIFICATION AND INFORMATION HANDLING
+--------------------------------------------------------------------------------
+1.1 Classification Scheme
+
+All information assets owned, processed, or transmitted by Nexus Financial
+Services (hereinafter "the Organisation") must be classified into one of the
+following four categories based on sensitivity and business impact:
+
+  CONFIDENTIAL: Highly sensitive data whose unauthorised disclosure could cause
+  significant harm to the Organisation, clients, or regulators. Examples include
+  customer financial records, personally identifiable information (PII), trade
+  secrets, and board communications. Access is restricted to named individuals
+  with explicit management approval.
+
+  INTERNAL USE ONLY: Information intended for internal business operations and
+  not for external disclosure. Examples include internal HR records, project
+  plans, and operational process documents. Access is restricted to employees
+  and contractors with a legitimate business need.
+
+  PUBLIC: Information approved for release to the general public, including
+  marketing materials, published regulatory disclosures, and press releases.
+  No access restrictions apply.
+
+  RESTRICTED (REGULATORY): Information subject to explicit regulatory handling
+  requirements, including RBI mandates, SEBI filings, and customer data governed
+  by PDPA. Special handling, encryption, and audit requirements apply.
+
+1.2 Labelling and Handling
+
+All documents and data assets must be clearly labelled with their classification
+level. Confidential and Restricted data must be encrypted in transit using
+TLS 1.2 or higher. Physical documents classified Confidential must be stored in
+locked cabinets and shredded when no longer required. Electronic media containing
+Confidential data must be securely disposed of using industry-standard data
+wiping tools.
+
+1.3 Data Retention
+
+Data is retained for the minimum period required by business necessity and
+applicable regulations. Upon expiry of the retention period, data must be
+securely deleted or anonymised in accordance with the Organisation's Data
+Retention Schedule.
+
+================================================================================
+
+2. ACCESS CONTROL
+--------------------------------------------------------------------------------
+2.1 Access Principles
+
+Access to all information systems and assets of the Organisation is governed by
+the principles of least privilege and need-to-know. Users are granted only the
+minimum level of access required to perform their assigned job functions.
+
+2.2 User Account Lifecycle
+
+  a) Provisioning: New user accounts are created only upon receipt of an
+     approved Access Request Form (ARF) signed by the line manager and
+     countersigned by the system owner. User accounts are provisioned to
+     the approved role profile in the identity management system.
+
+  b) Regular Review: All user access rights are reviewed semi-annually by
+     system owners. Dormant accounts — those with no login activity for more
+     than 90 days — are disabled automatically by the identity management
+     platform.
+
+  c) Deprovisioning: Upon employee termination or contract expiry, all access
+     rights are revoked within four hours of HR notification. Line managers
+     are responsible for notifying IT and HR simultaneously on the employee's
+     last working day.
+
+2.3 Privileged Access
+
+Administrative and privileged access is restricted to authorised IT personnel
+only. All privileged accounts are registered in the Privileged Access Management
+(PAM) system. Privileged access sessions are recorded and retained for audit
+purposes for a minimum of one year.
+
+2.4 Remote Access
+
+All remote connections to Organisation systems must be made via an approved
+Virtual Private Network (VPN). Remote access is restricted to Organisation-issued
+devices only.
+
+NOTE TO AUDITOR: This section does not currently specify a multi-factor
+authentication (MFA) requirement for any access category, including privileged
+access. This is an identified gap requiring policy amendment before the upcoming
+ISO 27001 certification audit.
+
+================================================================================
+
+3. INCIDENT RESPONSE
+--------------------------------------------------------------------------------
+3.1 Scope and Objectives
+
+This section establishes the Organisation's approach to detecting, reporting,
+and managing information security incidents. An information security incident
+is defined as any event that compromises the confidentiality, integrity, or
+availability of information assets.
+
+3.2 Incident Categorisation
+
+Incidents are categorised by severity to determine the appropriate escalation
+and response timeline:
+
+  P1 CRITICAL: Active breach, ransomware, data exfiltration, or system
+               compromise affecting customer data. Response within 30 minutes.
+
+  P2 HIGH:     Confirmed malware infection, unauthorised access, or service
+               outage. Response within 2 hours.
+
+  P3 MEDIUM:   Suspected security event, policy violation, or failed access
+               attempt. Response within 8 hours.
+
+  P4 LOW:      Minor anomaly, informational event, or procedural deviation.
+               Response within 48 hours.
+
+3.3 Reporting Procedure
+
+All employees must report suspected security incidents immediately to the
+Security Operations Centre (SOC) via the dedicated incident hotline
+(+91-22-XXXX-XXXX) or the incident reporting portal. Incidents must not be
+disclosed externally without explicit approval from the CISO or Legal Team.
+
+3.4 Incident Response Plan
+
+The Organisation maintains a documented Incident Response Plan (IRP) that
+defines roles, responsibilities, communication trees, and escalation paths for
+each severity level. The IRP is tested via annual tabletop exercises. The CISO
+is the Incident Response Owner.
+
+3.5 Post-Incident Review
+
+Following resolution of any P1 or P2 incident, a Post-Incident Review (PIR)
+must be completed within five business days. The PIR documents root cause,
+impact assessment, evidence collected, and corrective actions taken.
+
+NOTE TO AUDITOR: This section does not currently define a vulnerability
+scanning or patch management process. Identification and remediation of
+technical vulnerabilities requires a dedicated sub-section or standalone
+Vulnerability Management Policy. This is an identified gap.
+
+================================================================================
+
+END OF PARTIAL POLICY DOCUMENT
+
+Document Owner: Chief Information Security Officer (CISO)
+Status: DRAFT — Pending Legal and Compliance Review
+Version History: v1.0 (Jan 2024) — Initial. v2.0 (Mar 2025) — Expanded scope.

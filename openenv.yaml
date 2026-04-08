@@ -1,0 +1,79 @@
+spec_version: 1
+
+name: grc_compliance_audit_env
+display_name: "GRC Compliance Audit"
+version: "0.1.0"
+description: >
+  An RL environment where an AI agent acts as a GRC analyst, reading policy documents
+  and auditing them against ISO 27001:2022, NIST 800-53 Rev 5, and SOC 2 Trust Services
+  Criteria. The agent must identify covered controls, detect compliance gaps, and produce
+  structured gap analysis reports — scored against expert-annotated ground truth.
+  Designed to train agents for enterprise cybersecurity compliance workflows.
+
+type: text
+author: "Vishnunetaran"
+license: "Apache-2.0"
+tags:
+  - grc
+  - compliance
+  - iso27001
+  - nist
+  - soc2
+  - cybersecurity
+  - enterprise
+  - gap-analysis
+
+runtime:
+  type: docker
+  image: grc-compliance-audit-env:latest
+
+app: grc_compliance_audit_env.server.app:app
+port: 8000
+
+env_vars:
+  - name: OPENAI_API_KEY
+    description: "API key for optional LLM-as-judge grader (hard task)"
+    required: false
+  - name: MODEL_NAME
+    description: "LLM model identifier for inference script"
+    default: "gpt-4o-mini"
+    required: false
+  - name: API_BASE_URL
+    description: "Base URL for OpenAI-compatible API"
+    default: "https://api.openai.com/v1"
+    required: false
+  - name: HF_TOKEN
+    description: "Hugging Face token for Space deployment"
+    required: false
+
+tasks:
+  - id: "task_easy"
+    name: "Single-Framework Control Classification"
+    difficulty: "easy"
+    description: >
+      Read a single policy document (Access Control Policy, ~400 words) and classify
+      each section's coverage against ISO 27001:2022 Annex A control IDs.
+      Score: macro-F1 on control ID assignment vs ground-truth annotations.
+    reward_range: [0.0, 1.0]
+    max_steps: 5
+
+  - id: "task_medium"
+    name: "Dual-Framework Gap Analysis"
+    difficulty: "medium"
+    description: >
+      Audit a 3-section policy against ISO 27001:2022 and NIST 800-53. Map covered
+      controls and identify the 4 pre-seeded gaps. Output structured gap analysis.
+      Score: coverage F1 + gap detection F1 + description quality.
+    reward_range: [0.0, 1.0]
+    max_steps: 10
+
+  - id: "task_hard"
+    name: "Full Multi-Framework Compliance Audit"
+    difficulty: "hard"
+    description: >
+      Audit a complete 10-section ISMS policy against ISO 27001, NIST 800-53, and
+      SOC 2 simultaneously. Find all 5 seeded gaps, produce remediation suggestions,
+      and output a cross-framework shared-control analysis.
+      Score: mapping accuracy + gap detection + cross-framework coverage quality.
+    reward_range: [0.0, 1.0]
+    max_steps: 20

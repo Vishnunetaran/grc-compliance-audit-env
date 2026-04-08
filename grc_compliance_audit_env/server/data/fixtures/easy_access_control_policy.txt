@@ -1,0 +1,144 @@
+ACCESS CONTROL POLICY v1.0
+Organisation: Acme Technologies Ltd
+Classification: Internal Use Only
+Effective Date: 01 January 2025
+Review Cycle: Annual
+
+================================================================================
+
+1. PURPOSE AND SCOPE
+--------------------------------------------------------------------------------
+This policy establishes the requirements and responsibilities for controlling
+access to information systems, applications, networks, and data assets owned or
+managed by Acme Technologies Ltd (hereinafter "the Organisation"). It applies to
+all employees, contractors, consultants, temporary staff, and third-party
+personnel who are granted access to organisational information assets.
+
+The Organisation is committed to governing information security through a formal,
+documented policy framework aligned with recognised international standards. All
+personnel with access to information assets are accountable for adhering to
+their assigned roles and responsibilities as defined by the Information Security
+Management function. Management direction is provided through the Information
+Security Steering Committee, which approves this policy and ensures it is
+communicated, understood, and reviewed on a scheduled basis.
+
+Any breach of this policy may result in disciplinary action, up to and including
+termination of employment or contract.
+
+================================================================================
+
+2. USER ACCESS MANAGEMENT
+--------------------------------------------------------------------------------
+Access to organisational systems and information assets is granted strictly on a
+need-to-know and need-to-use basis, consistent with the principle of least
+privilege. Access rights are determined by an individual's role and
+responsibilities within the Organisation.
+
+The process for granting, modifying, and revoking access rights is as follows:
+
+  a) Formal Access Request: All new access requests must be submitted via the
+     IT Service Desk portal using the Access Request Form (ARF). Requests must
+     include a business justification and be approved by the requesting
+     employee's line manager and the system owner.
+
+  b) Provisioning: Upon approval, the IT team provisions access rights in
+     accordance with the approved role profile. Access is restricted to the
+     minimum permissions required to perform defined job functions.
+
+  c) Periodic Review: Access rights for all users are reviewed on a quarterly
+     basis by system owners and line managers. Any access no longer required
+     must be revoked within five business days of the review.
+
+  d) Access Restriction: Users are only permitted to access information and
+     systems authorised for their role. Sharing of credentials, access cards,
+     or authentication tokens is strictly prohibited. Role-Based Access Control
+     (RBAC) is applied across all critical systems to enforce this separation.
+
+================================================================================
+
+3. PRIVILEGED ACCESS
+--------------------------------------------------------------------------------
+Administrative and privileged access rights represent the highest-risk access
+category and are subject to additional controls beyond standard user access
+management.
+
+  a) Minimum Grant: Privileged access is granted only when operationally
+     necessary and only for the specific system or environment requiring
+     elevation. The principle of least privilege is strictly enforced.
+     Administrative accounts are separate from standard user accounts.
+
+  b) Privileged Account Registry: All privileged accounts — including local
+     administrator, domain administrator, database administrator (DBA), and
+     superuser (root) accounts — must be registered in the Privileged Access
+     Management (PAM) system. The use of shared or generic administrative
+     accounts is prohibited.
+
+  c) Monitoring and Logging: All privileged access sessions are logged and
+     subject to real-time monitoring. Logs are retained for a minimum of twelve
+     months. Any anomalous privileged activity triggers an automated alert to
+     the Security Operations Centre (SOC).
+
+  d) Time-Limited Access: Privileged access may be granted on a just-in-time
+     (JIT) basis for specific maintenance windows. Such access expires
+     automatically at the end of the approved window.
+
+================================================================================
+
+4. REMOTE ACCESS
+--------------------------------------------------------------------------------
+Remote access to organisational systems, networks, and data is permitted only
+under the following conditions:
+
+  a) VPN Requirement: All remote connections to internal systems must be
+     established through the Organisation's approved Virtual Private Network
+     (VPN) solution. Direct remote desktop connections to internal servers
+     without VPN are prohibited.
+
+  b) Secure Authentication: Remote access sessions require secure authentication
+     using Organisation-approved credentials. Session inactivity timeout is set
+     to 15 minutes, after which the session is automatically terminated and
+     re-authentication is required.
+
+  c) Device Compliance: Only Organisation-managed or approved personal devices
+     configured with endpoint security controls (antivirus, disk encryption, OS
+     patching) may be used to establish remote connections.
+
+  d) Prohibited Uses: Remote access must not be used to transfer confidential
+     data to unapproved personal storage, to circumvent network security
+     controls, or to allow third-party access without explicit authorisation.
+
+  e) Network Security: Remote connections traverse encrypted network channels.
+     Firewall rules restrict remote access to only the services and systems
+     required by each user's role.
+
+================================================================================
+
+5. ACCESS REVIEW AND TERMINATION
+--------------------------------------------------------------------------------
+  a) Periodic Access Reviews: All user access rights are reviewed at minimum
+     every six months by the relevant system owner and line manager. The review
+     must confirm continued business justification for each access grant.
+     Results are documented and retained for audit purposes.
+
+  b) Immediate Revocation on Termination: Upon termination of employment or
+     contract — whether voluntary or involuntary — all logical access rights,
+     physical access tokens, VPN certificates, and system credentials are
+     revoked within twenty-four (24) hours of the termination notification.
+
+  c) Role Change: When an employee changes roles, all access rights associated
+     with the former role are revoked and new rights appropriate to the new role
+     are provisioned through the standard access request process. Cumulative
+     access rights that exceed the new role's requirements must be removed.
+
+  d) Return of Assets: Upon termination, the employee must return all
+     Organisation-issued equipment, access cards, and authentication tokens
+     in accordance with the Organisation's exit procedures.
+
+================================================================================
+
+END OF POLICY
+
+Document Owner: Chief Information Security Officer (CISO)
+Approved by: Information Security Steering Committee
+Next Review Date: 01 January 2026
+Version History: v1.0 — Initial Release

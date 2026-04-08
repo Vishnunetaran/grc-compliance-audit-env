@@ -1,0 +1,442 @@
+{
+  "version": "SOC 2 (AICPA Trust Services Criteria 2017, with 2022 updates)",
+  "description": "SOC 2 Trust Services Criteria covering 5 categories: Common Criteria (Security), Availability, Processing Integrity, Confidentiality, and Privacy.",
+  "categories": [
+    {
+      "id": "CC",
+      "name": "Common Criteria (Security)",
+      "description": "Mandatory for all SOC 2 audits. Covers the foundational security controls.",
+      "criteria": [
+        {
+          "id": "CC1.1",
+          "name": "COSO Principle 1: Demonstrates commitment to integrity and ethical values",
+          "category": "Control Environment",
+          "keywords": ["integrity", "ethical values", "code of conduct", "ethics"]
+        },
+        {
+          "id": "CC1.2",
+          "name": "COSO Principle 2: Board exercises oversight responsibility",
+          "category": "Control Environment",
+          "keywords": ["board oversight", "governance", "board of directors"]
+        },
+        {
+          "id": "CC1.3",
+          "name": "COSO Principle 3: Establishes structure, authority, and responsibility",
+          "category": "Control Environment",
+          "keywords": ["organizational structure", "authority", "responsibility", "reporting lines"]
+        },
+        {
+          "id": "CC1.4",
+          "name": "COSO Principle 4: Demonstrates commitment to competence",
+          "category": "Control Environment",
+          "keywords": ["competence", "training", "skills", "awareness", "security training"]
+        },
+        {
+          "id": "CC1.5",
+          "name": "COSO Principle 5: Enforces accountability",
+          "category": "Control Environment",
+          "keywords": ["accountability", "performance", "responsibility"]
+        },
+        {
+          "id": "CC2.1",
+          "name": "COSO Principle 13: Obtains or generates relevant, quality information",
+          "category": "Communication and Information",
+          "keywords": ["information quality", "relevant information", "data quality"]
+        },
+        {
+          "id": "CC2.2",
+          "name": "COSO Principle 14: Internally communicates information",
+          "category": "Communication and Information",
+          "keywords": ["internal communication", "security communication", "policies communication"]
+        },
+        {
+          "id": "CC2.3",
+          "name": "COSO Principle 15: Externally communicates information",
+          "category": "Communication and Information",
+          "keywords": ["external communication", "external reporting", "stakeholder communication"]
+        },
+        {
+          "id": "CC3.1",
+          "name": "COSO Principle 6: Specifies suitable objectives",
+          "category": "Risk Assessment",
+          "keywords": ["risk objectives", "security objectives"]
+        },
+        {
+          "id": "CC3.2",
+          "name": "COSO Principle 7: Identifies and analyzes risk",
+          "category": "Risk Assessment",
+          "keywords": ["risk identification", "risk analysis", "risk assessment", "threat analysis"]
+        },
+        {
+          "id": "CC3.3",
+          "name": "COSO Principle 8: Assesses fraud risk",
+          "category": "Risk Assessment",
+          "keywords": ["fraud risk", "fraud assessment", "fraud prevention"]
+        },
+        {
+          "id": "CC3.4",
+          "name": "COSO Principle 9: Identifies and analyzes significant change",
+          "category": "Risk Assessment",
+          "keywords": ["change analysis", "significant change", "change risk"]
+        },
+        {
+          "id": "CC4.1",
+          "name": "COSO Principle 16: Selects, develops, and performs ongoing/separate evaluations",
+          "category": "Monitoring Activities",
+          "keywords": ["monitoring", "ongoing evaluation", "assessment"]
+        },
+        {
+          "id": "CC4.2",
+          "name": "COSO Principle 17: Evaluates and communicates deficiencies",
+          "category": "Monitoring Activities",
+          "keywords": ["deficiency evaluation", "remediation", "corrective action"]
+        },
+        {
+          "id": "CC5.1",
+          "name": "COSO Principle 10: Selects and develops control activities",
+          "category": "Control Activities",
+          "keywords": ["control activities", "control selection", "control design"]
+        },
+        {
+          "id": "CC5.2",
+          "name": "COSO Principle 11: Selects and develops general controls over technology",
+          "category": "Control Activities",
+          "keywords": ["technology controls", "IT controls", "general controls"]
+        },
+        {
+          "id": "CC5.3",
+          "name": "COSO Principle 12: Deploys through policies and procedures",
+          "category": "Control Activities",
+          "keywords": ["policies", "procedures", "policy deployment"]
+        },
+        {
+          "id": "CC6.1",
+          "name": "Logical and physical access security software, infrastructure, and architectures",
+          "category": "Logical and Physical Access Controls",
+          "keywords": ["logical access", "physical access", "infrastructure security", "access management"]
+        },
+        {
+          "id": "CC6.2",
+          "name": "User registration and authorization",
+          "category": "Logical and Physical Access Controls",
+          "keywords": ["user registration", "authorization", "provisioning", "access request"]
+        },
+        {
+          "id": "CC6.3",
+          "name": "Role-based access and least privilege",
+          "category": "Logical and Physical Access Controls",
+          "keywords": ["role-based access", "RBAC", "least privilege", "need-to-know"]
+        },
+        {
+          "id": "CC6.4",
+          "name": "Physical access restrictions",
+          "category": "Logical and Physical Access Controls",
+          "keywords": ["physical access", "physical restriction", "badge", "facility access"]
+        },
+        {
+          "id": "CC6.5",
+          "name": "Logical access security disposal",
+          "category": "Logical and Physical Access Controls",
+          "keywords": ["access disposal", "account deactivation", "deprovisioning"]
+        },
+        {
+          "id": "CC6.6",
+          "name": "Logical access security authentication",
+          "category": "Logical and Physical Access Controls",
+          "keywords": ["authentication", "MFA", "multi-factor", "login", "credentials"]
+        },
+        {
+          "id": "CC6.7",
+          "name": "Encryption and data protection in transit and at rest",
+          "category": "Logical and Physical Access Controls",
+          "keywords": ["encryption", "data protection", "TLS", "encryption at rest", "encryption in transit"]
+        },
+        {
+          "id": "CC6.8",
+          "name": "Prevention and detection of unauthorized software",
+          "category": "Logical and Physical Access Controls",
+          "keywords": ["unauthorized software", "malware", "software control", "application whitelist"]
+        },
+        {
+          "id": "CC7.1",
+          "name": "Detection and monitoring of new vulnerabilities",
+          "category": "System Operations",
+          "keywords": ["vulnerability detection", "vulnerability monitoring", "scanning", "vulnerability management"]
+        },
+        {
+          "id": "CC7.2",
+          "name": "Monitoring system components for anomalies",
+          "category": "System Operations",
+          "keywords": ["anomaly detection", "monitoring", "alerting", "SIEM", "logging"]
+        },
+        {
+          "id": "CC7.3",
+          "name": "Evaluation of security events",
+          "category": "System Operations",
+          "keywords": ["event evaluation", "incident response", "security event", "triage", "incident classification"]
+        },
+        {
+          "id": "CC7.4",
+          "name": "Incident response",
+          "category": "System Operations",
+          "keywords": ["incident response", "containment", "eradication", "recovery", "incident handling"]
+        },
+        {
+          "id": "CC7.5",
+          "name": "Identification and remediation of identified vulnerabilities",
+          "category": "System Operations",
+          "keywords": ["vulnerability remediation", "patching", "patch management"]
+        },
+        {
+          "id": "CC8.1",
+          "name": "Change management processes",
+          "category": "Change Management",
+          "keywords": ["change management", "change control", "change request", "CAB", "deployment"]
+        },
+        {
+          "id": "CC9.1",
+          "name": "Risk mitigation and business continuity",
+          "category": "Risk Mitigation",
+          "keywords": ["risk mitigation", "business continuity", "BCP", "risk treatment"]
+        },
+        {
+          "id": "CC9.2",
+          "name": "Vendor and business partner risk management",
+          "category": "Risk Mitigation",
+          "keywords": ["vendor risk", "third-party risk", "supplier risk", "vendor management"]
+        }
+      ]
+    },
+    {
+      "id": "A",
+      "name": "Availability",
+      "description": "System availability commitments and SLAs.",
+      "criteria": [
+        {
+          "id": "A-1",
+          "name": "System availability objectives and commitments",
+          "category": "Availability",
+          "keywords": ["availability", "SLA", "uptime", "redundancy", "disaster recovery", "backup", "BCP"]
+        },
+        {
+          "id": "A-2",
+          "name": "Environmental protections for system availability",
+          "category": "Availability",
+          "keywords": ["environmental protection", "UPS", "generator", "cooling"]
+        },
+        {
+          "id": "A-3",
+          "name": "Data backup and recovery",
+          "category": "Availability",
+          "keywords": ["backup", "data recovery", "restore", "backup testing"]
+        }
+      ]
+    },
+    {
+      "id": "PI",
+      "name": "Processing Integrity",
+      "description": "Data processing accuracy and completeness.",
+      "criteria": [
+        {
+          "id": "PI-1",
+          "name": "Processing completeness, accuracy, timeliness, and authorization",
+          "category": "Processing Integrity",
+          "keywords": ["processing integrity", "accuracy", "completeness", "timeliness", "data quality"]
+        },
+        {
+          "id": "PI-2",
+          "name": "System inputs are complete and accurate",
+          "category": "Processing Integrity",
+          "keywords": ["input validation", "data input", "input controls"]
+        },
+        {
+          "id": "PI-3",
+          "name": "System processing is complete, accurate, and timely",
+          "category": "Processing Integrity",
+          "keywords": ["data processing", "processing controls", "batch processing"]
+        },
+        {
+          "id": "PI-4",
+          "name": "System outputs are complete and accurate",
+          "category": "Processing Integrity",
+          "keywords": ["output controls", "data output", "report accuracy"]
+        },
+        {
+          "id": "PI-5",
+          "name": "Stored data is complete and accurate",
+          "category": "Processing Integrity",
+          "keywords": ["data storage", "data integrity", "stored data"]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Confidentiality",
+      "description": "Data classification and handling for confidential information.",
+      "criteria": [
+        {
+          "id": "C-1",
+          "name": "Identification and classification of confidential information",
+          "category": "Confidentiality",
+          "keywords": ["data classification", "confidential", "classification scheme", "labeling"]
+        },
+        {
+          "id": "C-2",
+          "name": "Disposal of confidential information",
+          "category": "Confidentiality",
+          "keywords": ["data disposal", "secure deletion", "information disposal"]
+        }
+      ]
+    },
+    {
+      "id": "P",
+      "name": "Privacy",
+      "description": "Personal data collection, use, retention, and disposal.",
+      "criteria": [
+        {
+          "id": "P-1",
+          "name": "Privacy notice and communication",
+          "category": "Privacy",
+          "keywords": ["privacy notice", "privacy policy", "data collection notice"]
+        },
+        {
+          "id": "P-2",
+          "name": "Choice and consent",
+          "category": "Privacy",
+          "keywords": ["consent", "opt-in", "opt-out", "choice"]
+        },
+        {
+          "id": "P-3",
+          "name": "Collection limited to identified purposes",
+          "category": "Privacy",
+          "keywords": ["purpose limitation", "data minimization", "collection limitation"]
+        },
+        {
+          "id": "P-4",
+          "name": "Use, retention, and disposal",
+          "category": "Privacy",
+          "keywords": ["data use", "data retention", "data disposal", "retention policy"]
+        },
+        {
+          "id": "P-5",
+          "name": "Access to personal information",
+          "category": "Privacy",
+          "keywords": ["data access", "data subject rights", "access request"]
+        },
+        {
+          "id": "P-6",
+          "name": "Disclosure and notification of personal information",
+          "category": "Privacy",
+          "keywords": ["disclosure", "breach notification", "data sharing"]
+        },
+        {
+          "id": "P-7",
+          "name": "Quality of personal information",
+          "category": "Privacy",
+          "keywords": ["data quality", "accuracy", "completeness"]
+        },
+        {
+          "id": "P-8",
+          "name": "Management and monitoring of personal data",
+          "category": "Privacy",
+          "keywords": ["privacy management", "privacy monitoring", "DPO"]
+        }
+      ]
+    }
+  ],
+  "cross_framework_mapping": {
+    "description": "Ground-truth cross-framework control equivalence table used by the grader for shared-control scoring.",
+    "mappings": [
+      {
+        "policy_topic": "Access Control Policy",
+        "iso27001": ["A.5.15", "A.8.2", "A.8.3"],
+        "nist_80053": ["AC-1", "AC-2", "AC-3"],
+        "soc2": ["CC6.1", "CC6.2", "CC6.3"]
+      },
+      {
+        "policy_topic": "Authentication & MFA",
+        "iso27001": ["A.8.5"],
+        "nist_80053": ["IA-2", "IA-5"],
+        "soc2": ["CC6.1", "CC6.6"]
+      },
+      {
+        "policy_topic": "Incident Response Policy",
+        "iso27001": ["A.5.24", "A.5.25", "A.5.26"],
+        "nist_80053": ["IR-1", "IR-4", "IR-8"],
+        "soc2": ["CC7.2", "CC7.3", "CC7.4"]
+      },
+      {
+        "policy_topic": "Data Classification",
+        "iso27001": ["A.5.12", "A.5.13"],
+        "nist_80053": ["MP-3", "RA-2"],
+        "soc2": ["C-1", "C-2"]
+      },
+      {
+        "policy_topic": "Encryption / Cryptography",
+        "iso27001": ["A.8.24"],
+        "nist_80053": ["SC-8", "SC-28"],
+        "soc2": ["CC6.1", "CC6.7"]
+      },
+      {
+        "policy_topic": "Vulnerability Management",
+        "iso27001": ["A.8.8"],
+        "nist_80053": ["RA-5", "SI-2"],
+        "soc2": ["CC7.1"]
+      },
+      {
+        "policy_topic": "Change Management",
+        "iso27001": ["A.8.32"],
+        "nist_80053": ["CM-3", "CM-5"],
+        "soc2": ["CC8.1"]
+      },
+      {
+        "policy_topic": "Business Continuity",
+        "iso27001": ["A.5.29", "A.5.30"],
+        "nist_80053": ["CP-2", "CP-9"],
+        "soc2": ["A-1"]
+      },
+      {
+        "policy_topic": "Logging & Monitoring",
+        "iso27001": ["A.8.15", "A.8.16"],
+        "nist_80053": ["AU-2", "AU-12"],
+        "soc2": ["CC7.2"]
+      },
+      {
+        "policy_topic": "Vendor Management",
+        "iso27001": ["A.5.19", "A.5.20"],
+        "nist_80053": ["SR-3", "SR-5"],
+        "soc2": ["CC9.2"]
+      },
+      {
+        "policy_topic": "Security Awareness Training",
+        "iso27001": ["A.6.3"],
+        "nist_80053": ["AT-2", "AT-3"],
+        "soc2": ["CC1.4"]
+      },
+      {
+        "policy_topic": "Physical Security",
+        "iso27001": ["A.7.1", "A.7.2", "A.7.3", "A.7.4"],
+        "nist_80053": ["PE-2", "PE-3"],
+        "soc2": ["CC6.4"]
+      },
+      {
+        "policy_topic": "Secure Development",
+        "iso27001": ["A.8.25", "A.8.28"],
+        "nist_80053": ["SA-3", "SA-8"],
+        "soc2": ["CC8.1"]
+      },
+      {
+        "policy_topic": "Risk Assessment",
+        "iso27001": ["A.5.3", "A.8.2"],
+        "nist_80053": ["RA-3", "RA-5"],
+        "soc2": ["CC3.1", "CC3.2", "CC3.3", "CC3.4"]
+      },
+      {
+        "policy_topic": "Privacy / Data Protection",
+        "iso27001": ["A.5.34"],
+        "nist_80053": ["PT-1", "PT-2", "PT-3", "PT-4", "PT-5", "PT-6", "PT-7"],
+        "soc2": ["P-1", "P-2", "P-3", "P-4", "P-5", "P-6", "P-7", "P-8"]
+      }
+    ]
+  }
+}

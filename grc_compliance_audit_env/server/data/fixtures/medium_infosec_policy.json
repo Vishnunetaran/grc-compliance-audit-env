@@ -1,0 +1,126 @@
+{
+  "policy_id": "medium_001",
+  "policy_name": "Information Security Policy v2.0 (Partial)",
+  "policy_type": "information_security",
+  "target_frameworks": ["iso27001", "nist_80053"],
+  "sections": [
+    {
+      "section_id": "section_1",
+      "heading": "Data Classification and Information Handling",
+      "text_summary": "Four-level classification scheme (Confidential, Internal, Public, Restricted), labelling, encryption in transit (TLS 1.2+), physical/electronic media handling, and data retention schedule.",
+      "gt_iso_controls": ["A.5.12", "A.5.13", "A.8.24"],
+      "gt_nist_controls": ["MP-3", "RA-2", "SC-8", "SC-28"],
+      "risk_coverage": "high",
+      "grader_notes": {
+        "iso": {
+          "A.5.12": "Classification scheme with four tiers defined.",
+          "A.5.13": "Labelling requirement for all data assets stated.",
+          "A.8.24": "Encryption in transit (TLS 1.2+) and encryption at rest for Confidential data."
+        },
+        "nist": {
+          "MP-3": "Media marking / labelling required for Confidential/Restricted data.",
+          "RA-2": "Security categorisation / classification scheme defined.",
+          "SC-8": "Transmission confidentiality — TLS 1.2+ for data in transit.",
+          "SC-28": "Protection of information at rest — encrypted storage for Confidential data."
+        }
+      }
+    },
+    {
+      "section_id": "section_2",
+      "heading": "Access Control",
+      "text_summary": "Least privilege, need-to-know, ARF-based provisioning, semi-annual reviews, 4-hour deprovisioning on termination, PAM for privilege, VPN for remote. MFA requirement ABSENT.",
+      "gt_iso_controls": ["A.5.15", "A.5.16", "A.8.2", "A.8.3"],
+      "gt_nist_controls": ["AC-1", "AC-2", "AC-3", "AC-17"],
+      "risk_coverage": "high",
+      "grader_notes": {
+        "iso": {
+          "A.5.15": "Access control policy with least privilege and need-to-know.",
+          "A.5.16": "Identity management — ARF process, identity management system.",
+          "A.8.2": "Privileged access rights — PAM system, privileged account registry.",
+          "A.8.3": "Information access restriction — role profiles, RBAC implied."
+        },
+        "nist": {
+          "AC-1": "Access control policy and procedures established.",
+          "AC-2": "Account management — provisioning, review, deprovisioning lifecycle.",
+          "AC-3": "Access enforcement — least privilege, role-based provisioning.",
+          "AC-17": "Remote access — VPN requirement for remote connections."
+        }
+      }
+    },
+    {
+      "section_id": "section_3",
+      "heading": "Incident Response",
+      "text_summary": "4-tier incident categorisation (P1-P4), SOC reporting, documented IRP, annual tabletop exercise, post-incident review. Vulnerability scanning ABSENT.",
+      "gt_iso_controls": ["A.5.24", "A.5.25", "A.5.26", "A.5.27"],
+      "gt_nist_controls": ["IR-1", "IR-4", "IR-6", "IR-8"],
+      "risk_coverage": "high",
+      "grader_notes": {
+        "iso": {
+          "A.5.24": "IRP planning and preparation — documented IRP, CISO as owner.",
+          "A.5.25": "Assessment/decision on incidents — severity categorisation P1-P4.",
+          "A.5.26": "Response to incidents — response timelines, containment.",
+          "A.5.27": "Learning from incidents — post-incident review within 5 days."
+        },
+        "nist": {
+          "IR-1": "IR policy and procedures — IRP documented.",
+          "IR-4": "Incident handling — containment, eradication workflow.",
+          "IR-6": "Incident reporting — SOC hotline and portal.",
+          "IR-8": "Incident response plan — maintained, tested annually."
+        }
+      }
+    }
+  ],
+  "seeded_gaps": [
+    {
+      "control_id": "A.8.5",
+      "framework": "iso27001",
+      "equivalent_nist": "IA-2",
+      "risk_level": "critical",
+      "gap_description": "No multi-factor authentication (MFA) requirement specified for any access category, including privileged access and remote access.",
+      "missing_from_section": "section_2",
+      "remediation_keywords": ["MFA", "multi-factor", "two-factor", "authentication", "OTP", "TOTP"],
+      "suggested_addition": "Section 2 (Access Control) must be amended to require MFA for all remote access sessions, all privileged account logins, and all access to Confidential or Restricted systems."
+    },
+    {
+      "control_id": "A.8.8",
+      "framework": "iso27001",
+      "equivalent_nist": "RA-5",
+      "risk_level": "high",
+      "gap_description": "No vulnerability scanning or patch management process defined anywhere in the policy. Technical vulnerabilities are not addressed.",
+      "missing_from_section": null,
+      "remediation_keywords": ["vulnerability", "scanning", "patch", "CVE", "remediation", "vulnerability management"],
+      "suggested_addition": "A new sub-section must be added to Section 3 (or a standalone Vulnerability Management Policy created) defining: vulnerability scanning frequency, responsible team, patch SLAs by severity (critical=24h, high=7d, medium=30d), and periodic penetration testing schedule."
+    },
+    {
+      "control_id": "IA-2",
+      "framework": "nist_80053",
+      "equivalent_iso": "A.8.5",
+      "risk_level": "critical",
+      "gap_description": "Multi-factor authentication not specified for organisational users, particularly for privileged and remote access scenarios.",
+      "missing_from_section": "section_2",
+      "remediation_keywords": ["MFA", "multi-factor", "two-factor", "authentication", "OTP"],
+      "suggested_addition": "Access Control section must mandate MFA for privileged accounts, remote access (VPN), and all access to critical/regulated systems."
+    },
+    {
+      "control_id": "RA-5",
+      "framework": "nist_80053",
+      "equivalent_iso": "A.8.8",
+      "risk_level": "high",
+      "gap_description": "Vulnerability monitoring and scanning procedure is absent from the policy. No patch management SLAs defined.",
+      "missing_from_section": null,
+      "remediation_keywords": ["vulnerability scanning", "vulnerability monitoring", "patch management", "CVE", "penetration testing"],
+      "suggested_addition": "Policy must define a vulnerability management programme including scheduled scanning, CVE tracking, and severity-based remediation timelines."
+    }
+  ],
+  "max_steps": 10,
+  "grader_config": {
+    "type": "gap_analysis",
+    "weights": {
+      "coverage_f1": 0.40,
+      "gap_f1": 0.40,
+      "description_score": 0.20
+    },
+    "partial_reward": true,
+    "reward_per_section": true
+  }
+}

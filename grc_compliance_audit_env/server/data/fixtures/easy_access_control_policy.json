@@ -1,0 +1,75 @@
+{
+  "policy_id": "easy_001",
+  "policy_name": "Access Control Policy v1.0",
+  "policy_type": "access_control",
+  "target_framework": "iso27001",
+  "hint": "Focus on ISO 27001:2022 Annex A controls. Key areas: policies (A.5.1), roles (A.5.2), access control (A.5.15, A.8.2, A.8.3), authentication (A.8.5), network security (A.8.20), and termination responsibilities (A.6.5).",
+  "sections": [
+    {
+      "section_id": "section_1",
+      "heading": "Purpose and Scope",
+      "text_summary": "Establishes the governance framework, management direction, accountability, and scope of the access control policy.",
+      "gt_iso_controls": ["A.5.1", "A.5.2"],
+      "risk_coverage": "low",
+      "grader_notes": {
+        "A.5.1": "Policy framework and management direction for information security is described.",
+        "A.5.2": "Roles and responsibilities, accountability across personnel types defined."
+      }
+    },
+    {
+      "section_id": "section_2",
+      "heading": "User Access Management",
+      "text_summary": "Formal access request process, need-to-know/least privilege provisioning, quarterly review, and RBAC enforcement.",
+      "gt_iso_controls": ["A.5.15", "A.8.3"],
+      "risk_coverage": "high",
+      "grader_notes": {
+        "A.5.15": "Access control policy with authorisation rules and need-to-know basis.",
+        "A.8.3": "Information access restriction via RBAC and role profiles."
+      }
+    },
+    {
+      "section_id": "section_3",
+      "heading": "Privileged Access",
+      "text_summary": "PAM registry, separate admin accounts, JIT access, session logging, and monitoring of all privileged activity.",
+      "gt_iso_controls": ["A.8.2"],
+      "risk_coverage": "critical",
+      "grader_notes": {
+        "A.8.2": "Privileged access rights management: least privilege, PAM, separate accounts, monitoring."
+      }
+    },
+    {
+      "section_id": "section_4",
+      "heading": "Remote Access",
+      "text_summary": "VPN requirement, session timeout after 15 minutes inactivity, device compliance, network encryption.",
+      "gt_iso_controls": ["A.8.5", "A.8.20"],
+      "risk_coverage": "high",
+      "grader_notes": {
+        "A.8.5": "Secure authentication for remote sessions with inactivity timeout (re-authentication).",
+        "A.8.20": "Network security: VPN, firewall rules, encrypted channels for remote connections."
+      }
+    },
+    {
+      "section_id": "section_5",
+      "heading": "Access Review and Termination",
+      "text_summary": "Bi-annual access reviews, 24-hour revocation on termination, rights cleared on role change.",
+      "gt_iso_controls": ["A.5.15", "A.6.5"],
+      "risk_coverage": "medium",
+      "grader_notes": {
+        "A.5.15": "Access rights management — review and revocation processes.",
+        "A.6.5": "Responsibilities after termination or change of employment: immediate revocation."
+      }
+    }
+  ],
+  "available_iso_controls_hint": [
+    "A.5.1", "A.5.2", "A.5.10", "A.5.15", "A.5.16", "A.5.17", "A.5.18",
+    "A.6.5", "A.6.7",
+    "A.8.1", "A.8.2", "A.8.3", "A.8.5", "A.8.15", "A.8.16", "A.8.20"
+  ],
+  "max_steps": 5,
+  "grader_config": {
+    "type": "classification",
+    "scoring": "macro_f1",
+    "partial_reward": true,
+    "reward_per_section": true
+  }
+}
