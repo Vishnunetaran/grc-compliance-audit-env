@@ -194,7 +194,17 @@ async def _send_error(ws: WebSocket, message: str) -> None:
         json.dumps({"type": "error", "message": message})
     )
 
+@app.get("/")
+def root():
+    return {
+        "name": "Sentinel GRC Audit Environment",
+        "status": "running",
+        "message": "OpenEnv environment is live."
+    }
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 # ─────────────────────────────────────────────────────────────────────────────
 # ASGI app instance (for uvicorn and openenv.yaml `app:` directive)
 # ─────────────────────────────────────────────────────────────────────────────
