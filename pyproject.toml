@@ -43,4 +43,4 @@ dev = [
 include = ["grc_compliance_audit_env*", "server*"]
 
 [project.scripts]
-server = "server.app:start"
+server = "server.app:main"
