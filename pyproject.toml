@@ -40,4 +40,7 @@ dev = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["grc_compliance_audit_env*"]
+include = ["grc_compliance_audit_env*", "server*"]
+
+[project.scripts]
+server = "server.app:start"
