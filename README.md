@@ -1,3 +1,12 @@
+---
+title: Sentinel GRC Audit
+emoji: 🛡️
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+license: mit
+---
 # GRC Compliance Audit Environment
 
 [![OpenEnv](https://img.shields.io/badge/OpenEnv-v1-blue)](https://github.com/meta-pytorch/OpenEnv)
