@@ -3,7 +3,7 @@ FROM ghcr.io/meta-pytorch/openenv-base:latest
 WORKDIR /app
 
 # Install Python dependencies first (layer-cached unless requirements change)
-COPY grc_compliance_audit_env/server/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy full project
