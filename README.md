@@ -44,7 +44,7 @@ To prevent agents from getting stuck in perpetual, hallucinated problem-solving 
 
 ## 📊 Benchmark Performance
 
-Sentinel GRC operates on a fiercely strict evaluation curve. Achieving over 0.85 on these scales requires strong alignment with structured audit expectations.
+Sentinel GRC is evaluated using a strict multi-task grading framework. The table below shows representative validation results observed during development.
 
 | Task | Score | Description |
 |------|------:|------------|
