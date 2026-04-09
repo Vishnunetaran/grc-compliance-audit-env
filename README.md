@@ -1,3 +1,12 @@
+---
+title: Sentinel GRC Audit
+emoji: 🛡️
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+license: mit
+---
 # 🛡️ Sentinel GRC: High-Precision Autonomous Compliance Auditor
 
 ## 🌍 Real-World Problem & Motivation
