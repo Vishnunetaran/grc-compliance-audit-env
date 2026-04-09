@@ -1,31 +1,41 @@
 # 🛡️ Sentinel GRC: High-Precision Autonomous Compliance Auditor
 
+## 🌍 Real-World Problem & Motivation
+
+Enterprise compliance audits are notoriously manual, expensive, and repetitive. Security teams routinely spend weeks painfully mapping internal policy documents to sprawling control frameworks like ISO 27001, NIST 800-53, and SOC 2. The manual nature of this work introduces a high risk of human error and inconsistency in a domain where absolute precision is required—not just "good sounding answers."
+
+Current AI methodologies (such as standard RAG pipelines or zero-shot LLMs) fail dramatically at this task:
+- **Long-context truncation:** Massive security documents overwhelm context windows, causing models to simply skip or forget sections.
+- **Hallucinated Control IDs:** Models frequently invent fake compliance clauses (e.g., "ISO A.9.9") instead of utilizing exact taxonomy IDs.
+- **Shallow Mapping:** RAG retrieves keywords but fails to perform the deep compliance reasoning required to verify if a control is genuinely satisfied.
+- **Blind Gap Detection:** Standard models struggle to detect what is *missing* from a document, which is the entire purpose of a gap analysis.
+
+This matters because compliance failures carry catastrophic financial and legal consequences. Enterprises urgently need reliable, repeatable AI auditing systems. This is not a chatbot problem—it is a rigorous, structured reasoning problem.
+
 ## Executive Value Proposition
 
-Sentinel GRC is a **High-Precision Autonomous Compliance Auditor** built meticulously for the Meta OpenEnv Hackathon. It expressly solves the **"Truncation & Hallucination Gap"** that plagues traditional RAG (Retrieval-Augmented Generation) systems when dealing with dense, multi-framework corporate policies.
-
-Compliance auditing is historically difficult because it requires absolute deterministic mapping across thousands of overlapping, complex taxonomies (ISO 27001, NIST 800-53, SOC 2). Naive LLM approaches and zero-shot RAG implementations frequently fail here due to context window saturation, ID hallucination, and superficial mapping. Sentinel GRC overcomes this by forcing structured environments, granular state transitions, and absolute grounding against deterministic ground truths.
+Sentinel GRC is a **High-Precision Autonomous Auditing System** built for the Meta OpenEnv Hackathon. It expressly solves the real-world enterprise bottleneck of policy mapping by targeting the "Truncation & Hallucination Gap" that plagues traditional LLM implementations. Sentinel GRC addresses this bottleneck by enforcing structured environments, granular state transitions, and strong grounding against deterministic ground truths.
 
 ---
 
 ## 🚀 The Triple-Threat Architecture
 
-The Sentinel environment employs three distinct mechanisms to enforce rigorous agent behavior:
+The Sentinel environment employs three distinct mechanisms to enforce rigorous, enterprise-grade agent behavior:
 
 ### 1. Progressive Sectional Inference
-Instead of forcing an LLM to absorb a massive 50-page policy and map all controls simultaneously, the environment enforces **one-section-at-a-time auditing**. This isolates context, completely avoids long-context truncation, and ensures near-100% structured output stability across both lightweight and complex models.
+Instead of forcing an LLM to absorb a massive 50-page policy and map all controls simultaneously, the environment enforces **one-section-at-a-time auditing**. This isolates context, significantly reduces long-context truncation, and ensures highly stabilised structured output across both lightweight and complex models (accelerating audit turnaround times).
 
 ### 2. Deterministic Hint Injection
-Real JSON taxonomies (specific ISO/NIST/SOC2 controls) are dynamically injected into the active prompt payload during state transitions. This entirely prevents "ID Drift" and enforces that the LLM utilizes exact, validated control IDs rather than mutating them or inventing fake compliance standards.
+Real JSON taxonomies (specific ISO/NIST/SOC2 controls) are dynamically injected into the active prompt payload during state transitions. This empirically stabilises the output and enforces that the LLM utilizes exact, validated control IDs rather than mutating them, resolving the primary hallucination risk faced by compliance teams.
 
 ### 3. Refinement Decay Logic
-To prevent agents from getting stuck in perpetual, hallucinated problem-solving loops, the inference logic implements an **early-exit mechanism**. If consecutive refinement steps (without new section targets) yield decaying scores, the episode deterministically terminates, stabilizing overall agent behavior and preventing grading penalization.
+To prevent agents from getting stuck in perpetual, hallucinated problem-solving loops, the inference logic implements an **early-exit mechanism**. If consecutive refinement steps yield decaying scores, the episode deterministically terminates. This mimics human auditor time-boxing, stabilizing overall agent behavior and protecting compute resources.
 
 ---
 
 ## 📊 Benchmark Performance
 
-Sentinel GRC operates on a fiercely strict evaluation curve. Achieving over 0.85 on these scales requires near-perfect alignment with human auditor judgments.
+Sentinel GRC operates on a fiercely strict evaluation curve. Achieving over 0.85 on these scales requires strong alignment with structured audit expectations.
 
 | Task | Score | Description |
 |------|------:|------------|
@@ -33,31 +43,32 @@ Sentinel GRC operates on a fiercely strict evaluation curve. Achieving over 0.85
 | **task_medium** | 0.91 | Dual-framework coverage execution & gap analysis. |
 | **task_hard** | 0.56 | Full tri-framework (ISO/NIST/SOC2) audit and overlap detection. |
 
-*Note: The **0.91** benchmark achieved on continuous testing represents an approximate **91% alignment with expert human auditors**, demonstrating finalist-tier performance. The scaling difficulty of multi-framework reasoning in `task_hard` actively demonstrates the ceiling limitations of state-of-the-art vision/language models interacting with strict enterprise constraints.*
+*Note: The 0.91 score observed in representative validation runs demonstrates strong alignment with structured audit expectations on the medium-difficulty task. The scaling difficulty of multi-framework reasoning in `task_hard` provides a realistic, representative performance ceiling for evaluating how state-of-the-art models interact with strict enterprise constraints.*
 
 ---
 
 ## 🛠️ Engineering Rigor
 
-Sentinel was designed from the ground up to exceed compliance and sandbox requirements for the OpenEnv multi-mode validator:
+Sentinel was designed heavily around reliability, reproducibility, and deployability for the OpenEnv multi-mode validator:
 
 - **Pydantic Action Sanitization**: Immutable parsing of agent actions.
-- **Deterministic Graders**: No fragile `scikit-learn` dependencies; pure python F1 and coverage computations logic ensuring reproducible environments.
-- **Structured Validation**: Zero log collision (100% compliant `[START]/[STEP]/[END]` isolation directly on `sys.stdout`).
-- **Lightweight Runtime**: Specifically optimized to execute gracefully within the 8GB memory constraint of Hugging Face free-tier zero containers.
+- **Deterministic Graders**: Lightweight native Python scoring logic for reproducibility, transparency, and low runtime overhead.
+- **Structured Validation**: Zero log collision (perfectly compliant `[START]/[STEP]/[END]` isolation directly on `sys.stdout`).
+- **Lightweight Infrastructure**: Specifically optimized to execute gracefully within the 8GB memory footprint constraint of Hugging Face free-tier containers.
 - **Production-Ready OpenEnv Deployment**: Fully supports Docker, local FastAPI, and serverless package-mode testing without configuration bloat.
 
 ---
 
-## 🧠 Why This Environment Matters
+## 🧠 Why This Matters in the Real World
 
-This is **NOT** a simple QA or generic RAG document search task. 
+This is not just a benchmark—it models a genuine enterprise workflow. Sentinel GRC bridges the gap between impressive LLM demos and production-grade auditing systems. 
 
-Auditing in Sentinel requires complex, contextual orchestration. An agent must successfully combine:
-1. **Constraint Reasoning** (understanding security policy vernacular).
-2. **Structured Mapping** (associating exact text to formal IDs).
-3. **Gap Detection** (recognizing what is *missing*, not just what is present).
-4. **Multi-Step Improvement** (using OpenEnv step rewards as intrinsic reward signals for active correction).
+In a real-world enterprise, this architecture can be directly operationalised for:
+- **Audit Preparation:** Pre-scanning policies before expensive external auditors arrive.
+- **Compliance Gap Detection:** Automatically flagging missing security controls during document revisions.
+- **Internal Security Validation:** Standardising policy governance reviews dynamically across all internal squads.
+
+Auditing in Sentinel requires contextual orchestration. An agent must successfully combine Constraint Reasoning, Structured Mapping, Gap Detection, and Multi-Step Improvement to securely validate corporate assets.
 
 ---
 
@@ -79,7 +90,7 @@ Agent Prompting & Control
            (ISO F1, Gap Delta)
                    │
                    ▼
-    Reward <─(0.0 - 1.0)─> Feedback Loop
+    Reward <─(continuous bounded signal)─> Feedback Loop
 ```
 
 ---
@@ -154,5 +165,5 @@ While Sentinel GRC v1 targets the core triad of security frameworks, the system'
 
 - **GDPR / CCPA Mapping**: Expanding taxonomies to enforce privacy directives natively.
 - **HIPAA Integration**: Direct alignment for Healthcare cloud infrastructure auditing.
-- **BrowserGym Evidence Collection**: Unifying this environment with web-agents to autonomously pull evidence logs from AWS/Azure/GCP portals to prove the controls exist.
+- **Automated Evidence Collection**: Future integration with browser-based agents for automated evidence collection from enterprise systems to prove the controls exist.
 - **Enterprise Audit Copilots**: Embedding the progressive inference engine seamlessly into internal GRC platforms (like Drata or Vanta) to generate pre-audit validations.
