@@ -272,8 +272,8 @@ class GRCEnvironment(Environment):
         self._sections_processed = len(action.control_mappings)
         self._score_history.append({
             "step":  self._step_count,
-            **{k: round(v, 4) for k, v in breakdown.items() if isinstance(v, float)},
-            "step_reward": round(step_reward, 4),
+            **{k: safe_score(round(v, 4)) for k, v in breakdown.items() if isinstance(v, float)},
+            "step_reward": safe_score(round(step_reward, 4)),
         })
 
         # ── Terminal conditions ───────────────────────────────────────────────
@@ -460,11 +460,11 @@ class GRCEnvironment(Environment):
             ),
             # Feedback — step_reward clamped to satisfy Pydantic ge=0.0 le=1.0
             # Agents should read obs.reward (raw) for the full signal
-            step_reward=max(0.0, min(1.0, step_reward)),
-            cumulative_reward=round(self._accumulated_reward, 4),
+            step_reward=safe_score(step_reward),
+            cumulative_reward=safe_score(round(self._accumulated_reward, 4)),
             grader_feedback=grader_feedback,
             score_breakdown={
-                k: round(v, 4) for k, v in score_breakdown.items()
+                k: safe_score(round(v, 4)) for k, v in score_breakdown.items()
                 if isinstance(v, float)
             },
             # Hint (easy task only)
