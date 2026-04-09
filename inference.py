@@ -31,7 +31,7 @@ except ImportError:
     OpenAI = None
 
 # ─── Hackathon-required variable names ───────────────────────────────────────
-API_BASE_URL: Optional[str] = os.getenv("API_BASE_URL")
+API_BASE_URL: Optional[str] = os.getenv("API_BASE_URL", "https://api.openai.com/v1")
 API_KEY:      Optional[str] = os.getenv("HF_TOKEN") or os.getenv("API_KEY")
 MODEL_NAME:   Optional[str] = os.getenv("MODEL_NAME", "gpt-4o-mini")
 
