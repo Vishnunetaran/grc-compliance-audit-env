@@ -66,6 +66,12 @@ def safe_print(line: str) -> None:
     sys.stdout.flush()
     time.sleep(0.05)
 
+def safe_score(x: float) -> float:
+    x = float(x)
+    if x <= 0.0: return 0.0001
+    if x >= 1.0: return 0.9999
+    return x
+
 # ─────────────────────────────────────────────────────────────────────────────
 # SYSTEM PROMPT — High-Fidelity GRC Auditor
 # ─────────────────────────────────────────────────────────────────────────────
