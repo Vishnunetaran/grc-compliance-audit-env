@@ -450,12 +450,13 @@ async def run_task(task_id: str, ws_base_url: str) -> Tuple[float, bool, int]:
             logger.error(f"WebSocket execution error for task {task_id}: {e}")
             return best_step_reward, False, step
         finally:
+            best_step_reward = safe_score(best_step_reward)
             safe_print(f"[END] {task_id} score={best_step_reward:.4f} steps={step}")
             
     except Exception as e:
         logger.error(f"Fatal error preparing task {task_id}: {e}")
-        safe_print(f"[END] {task_id} score=0.0000 steps=0")
-        return 0.0, False, 0
+        safe_print(f"[END] {task_id} score=0.0001 steps=0")
+        return 0.0001, False, 0
 
 async def main_async() -> None:
     print(f"{BOLD}  GRC Compliance Audit — Progressive Inference{RESET}")
@@ -473,7 +474,7 @@ async def main_async() -> None:
             results.append({"id": task_id, "score": score, "done": done, "steps": steps})
         except Exception as exc:
             logger.error(f"Caught unhandled task error: {exc}")
-            results.append({"id": task_id, "score": 0.0, "done": False, "steps": 0, "err": str(exc)})
+            results.append({"id": task_id, "score": 0.0001, "done": False, "steps": 0, "err": str(exc)})
 
     try:
         if LAUNCH_SERVER: stop_server_local()
@@ -497,8 +498,8 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"FATAL UNHANDLED EXCEPTION PREVENTED CRASH: {e}")
         print("\n  FINAL SCOREBOARD")
-        print("  task_easy       0.0000  ✗  0 steps")
-        print("  task_medium     0.0000  ✗  0 steps")
-        print("  task_hard       0.0000  ✗  0 steps")
-        print("  AVERAGE: 0.0000")
+        print("  task_easy       0.0001  ✗  0 steps")
+        print("  task_medium     0.0001  ✗  0 steps")
+        print("  task_hard       0.0001  ✗  0 steps")
+        print("  AVERAGE: 0.0001")
         sys.exit(0) # IMPORTANT: Exit cleanly

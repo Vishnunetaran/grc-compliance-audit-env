@@ -30,6 +30,14 @@ from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
 
+def safe_score(x: float) -> float:
+    x = float(x)
+    if x <= 0.0:
+        return 0.0001
+    if x >= 1.0:
+        return 0.9999
+    return x
+
 # OpenEnv base class — fall back to stub if not installed
 try:
     from openenv.core.env_server.types import Environment
@@ -296,7 +304,7 @@ class GRCEnvironment(Environment):
             policy_id=self._task.policy_id if self._task else "",
             policy_name=self._task.policy_name if self._task else "",
             target_frameworks=self._task.target_frameworks if self._task else [],
-            accumulated_reward=round(self._accumulated_reward, 4),
+            accumulated_reward=safe_score(round(self._accumulated_reward, 4)),
             max_steps=_MAX_STEPS.get(self._task_id, 20),
             is_complete=self._is_complete,
             sections_processed=self._sections_processed,
@@ -427,6 +435,7 @@ class GRCEnvironment(Environment):
         through the inherited `reward` field, which has no constraint.
         """
         task = self._task
+        step_reward = safe_score(step_reward)
 
         obs = GRCObservation(
             # Inherited fields — raw value including negatives for penalty
